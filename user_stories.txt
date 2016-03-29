@@ -1,0 +1,43 @@
+SCRUM – User stories
+  - Formato: As a [user role] I want to [goal] so that [benefit]
+  - Por ejemplo: Como comprador, quiero agregar libros al carrito de compras para elegir los libros que voy a comprar
+  - Especifican qué hay que hacer, evitando especificar cómo hacerlo
+  - Pueden agregarse detalles (breves)
+  - Pueden tener attachments que definan el contexto
+  - Conviene que incluyan los criterios de aceptación
+  - Pueden estar en una herramienta, en Google Docs o en tarjetas
+  - Se completa la info en una conversación
+  - Escribir buenas stories suele ser lo más difícil al arrancar un proyecto con Scrum
+  - Beneficios: ayuda a pensar desde la perspectiva del usuario
+
+Ejemplo:
+
+#1 - As a buyer, I want to place a book in a shopping cart so I can choose the books that I will buy
+
+Acceptance criteria:
+1. User can select a book from the catalog
+2. User can search the catalog by author or title.
+3. If the book is already in the shopping cart, its quantity is increased.
+4. If the book is not already in the shopping cart, it is added with a quantity of one.
+5. After the operation, the shopping cart is displayed.
+Effort: 5 Value: 7
+  
+  
+#################### USER STORIES #################### 
+
+Participante de juego hace desafío al resto:
+#1: Como usuario de la app quiero desafiar a otro usuario para eventualmente poder ganar fichas e ir aumentando mi ranking.
+
+Criterio de aceptación:
+1. El usuario puede seleccionar un monto en fichas que constituirá el valor de la apuesta. Dicho valor puede ser 0.
+2. El usuario puede buscar a otros usuarios para realizar el desafío.
+3. El usuario que recibe la invitación puede aceptar o rechazar el desafío.
+4. El usuario que recibe la invitación es notificado acerca del monto en fichas que debe apostar para participar del desafío
+5. Ambos usuarios son notificados respecto a la cantidad total de fichas que recaudará el ganador: Fichas base + Fichas de la apuesta
+
+Esfuerzo:
+- Mata opina: 13
+
+Valor de negocio:
+- Mata opina: 20
+
