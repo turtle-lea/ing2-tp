@@ -29,6 +29,46 @@
 \newcommand{\may}[1]{{\sc #1}}
 \newcommand{\tab}{\hspace*{2em}}
 
+\newcommand{\sprintstory}[6]{\begin{tabular}{| p{3cm} | p{12cm} |}
+ \hline
+ Número: & #1 \\
+ \hline
+ User Story: & #2 \\
+ \hline
+ Esfuerzo estimado: & #3 \\
+ \hline
+ Business Value: & #4 \\
+ \hline
+ Descripción: & #5 \\
+ \hline
+ Criterios de\newline Aceptación: & #6 \\
+ \hline
+\end{tabular}}
+
+\newcommand{\simplestory}[4]{\begin{tabular}{| p{3cm} | p{12cm} |}
+ \hline
+ Número: & #1 \\
+ \hline
+ User Story: & #2 \\
+ \hline
+ Esfuerzo estimado: & #3 \\
+ \hline
+ Business Value: & #4 \\
+ \hline
+\end{tabular}}
+
+\newenvironment{taskstable}
+{ \begin{tabular}{| p{14cm} | p{1cm} |}
+ \hline
+ \multicolumn{2}{|c|}{{\bf División en tareas}}\\
+ \hline
+ {\bf Tarea} & {\bf HH}\\
+ \hline }
+{ \end{tabular} }
+
+\newcommand{\task}[2]{#1 & #2\\
+ \hline}
+
 \hypersetup{
  pdfstartview= {FitH \hypercalcbp{\paperheight-\topmargin-1in-\headheight}},
  pdfauthor={Grupo},
@@ -59,6 +99,51 @@
          \item[]
 }
 {\end{list}}
+
+\newpage
+
+
+%%%%% EJEMPLOS DE USER STORY Y TAREAS
+
+\sprintstory
+{1}
+{Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación.}
+{3 pt.}
+{Nice to Have}
+{-}
+{\begin{itemize}
+  \item Ingresar mi nombre, mi cuenta de email y una contraseña, y apretar un botón que confirme el registro.
+  \item No debe permitir ingresar un mail sintácticamente inválido.
+  \item No debe permitir registrar dos veces el mismo mail.
+  \item La contraseña debe ser ingresada dos veces y el sistema validar que sean idénticas.
+\end{itemize}}
+
+\vspace{1cm}
+
+\simplestory
+{1}
+{Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación.}
+{3 pt.}
+{Nice to Have}
+
+            
+\begin{taskstable}
+ \task
+ {Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación}
+ {3}
+ 
+ \task
+ {Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación}
+ {3}
+\end{taskstable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
 
 \newpage
 
