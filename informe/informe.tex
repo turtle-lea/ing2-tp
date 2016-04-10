@@ -45,7 +45,7 @@
  \hline
 \end{tabular}}
 
-\newcommand{\simplestory}[4]{\begin{tabular}{| p{3cm} | p{12cm} |}
+\newcommand{\simplestory}[5]{\begin{tabular}{| p{3cm} | p{12cm} |}
  \hline
  Número: & #1 \\
  \hline
@@ -54,6 +54,8 @@
  Esfuerzo estimado: & #3 \\
  \hline
  Business Value: & #4 \\
+ \hline
+ Descripción: & #5 \\
  \hline
 \end{tabular}}
 
@@ -102,47 +104,49 @@
 
 \newpage
 
+\section{Backlog}
+\input{backlog}
+\newpage
+\section{Sprint}
+\input{sprint}
+
 
 %%%%% EJEMPLOS DE USER STORY Y TAREAS
 
-\sprintstory
-{1}
-{Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación.}
-{3 pt.}
-{Nice to Have}
-{-}
-{\begin{itemize}
-  \item Ingresar mi nombre, mi cuenta de email y una contraseña, y apretar un botón que confirme el registro.
-  \item No debe permitir ingresar un mail sintácticamente inválido.
-  \item No debe permitir registrar dos veces el mismo mail.
-  \item La contraseña debe ser ingresada dos veces y el sistema validar que sean idénticas.
-\end{itemize}}
+% \sprintstory
+% {1}
+% {Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación.}
+% {3 pt.}
+% {Nice to Have}
+% {-}
+% {\begin{itemize}
+%   \item Ingresar mi nombre, mi cuenta de email y una contraseña, y apretar un botón que confirme el registro.
+%   \item No debe permitir ingresar un mail sintácticamente inválido.
+%   \item No debe permitir registrar dos veces el mismo mail.
+%   \item La contraseña debe ser ingresada dos veces y el sistema validar que sean idénticas.
+% \end{itemize}}
 
-\vspace{1cm}
+% \vspace{1cm}
 
-\simplestory
-{1}
-{Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación.}
-{3 pt.}
-{Nice to Have}
+% \simplestory
+% {1}
+% {Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación.}
+% {3 pt.}
+% {Nice to Have}
+% {-}
 
-            
-\begin{taskstable}
- \task
- {Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación}
- {3}
- 
- \task
- {Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación}
- {3}
-\end{taskstable}
+
+% \begin{taskstable}
+%  \task
+%  {Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación}
+%  {3}
+
+%  \task
+%  {Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación}
+%  {3}
+% \end{taskstable}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
 
 
 \newpage
