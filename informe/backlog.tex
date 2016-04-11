@@ -1,13 +1,83 @@
-A continuación presentamos las user stories que forman parte de el backlog del proyecto, pero que no entran en el primer sprint.\\
+A continuación presentamos las user stories que forman parte de el backlog del proyecto, pero que no entran en el primer sprint.
+
+Para mayor claridad, fueron ordenadas según categorías funcionales y por valor de negocio (de mayor a menor).
+
+\subsection{Registro de Usuarios}
 
 \simplestory
-{268}
-{Como diseñador del juego quiero que se obtengan datos de popularidad en Twitter de los jugadores para afectar las fórmulas de umbral de éxito.}
-{13 pt.}
-{Nice to Have}
-{Los datos tienen que obtenerse durante la simulación del partido y en lo posible tener en cuenta si son positivos o negativos.}
+{216}
+{Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación.}
+{3 pt.}
+{Must Have}
+{-}
 
 \vspace{1cm}
+
+\simplestory
+{228}
+{Como usuario registrado quiero autenticarme en la aplicación usando mi cuenta de email y una contraseña para ingresar a la aplicación.}
+{3 pt.}
+{Must Have}
+{-}
+
+\vspace{1cm}
+
+\simplestory
+{229}
+{Como usuario logueado quiero desloguearme para finalizar el uso de la aplicación.}
+{1 pt.}
+{Great}
+{-}
+
+\vspace{1cm}
+
+\subsection{Desaf\'ios}
+
+\simplestory
+{231}
+{Como participante quiero crear un desafío para aparecer en el listado de desafíos disponibles.}
+{3 pt.}
+{Must Have}
+{\begin{itemize}
+\item Sólo el workflow de creación del desafío, cada componente está en otra user story.
+Cuestiones de diseño
+\end{itemize}}
+
+\vspace{1cm}
+
+\simplestory
+{239}
+{Como participante desafiado quiero aceptar un desafío para ganar fichas e ir aumentando el ranking dentro del sistema.}
+{3 pt.}
+{Must Have}
+{\begin{itemize}
+\item Cuestiones de modelado
+\end{itemize}}
+
+\vspace{1cm}
+
+\simplestory
+{261}
+{Como participante quiero ver la cantidad de puntos que realizó cada equipo en la simulación del desafío (score) y que se indique el ganador para saber qué tan bien o mal funcionó el equipo y observar a simple vista si gané o perdí.
+}
+{2 pt.}
+{Great}
+{-}
+
+\vspace{1cm}
+
+\simplestory
+{241}
+{Como participante quiero ver tabla de posiciones en base a desafíos ganados/perdidos para compararse con otros participantes.}
+{2 pt.}
+{Good}
+{-}
+
+\vspace{1cm}
+
+
+
+\subsection{Equipos}
 
 \simplestory
 {230}
@@ -32,27 +102,6 @@ A continuación presentamos las user stories que forman parte de el backlog del 
 \item Elegir técnico de una lista con todos los técnicos existentes en la liga.
 \item Ver jugadas que tiene asociadas cada técnico.
 \end{itemize}}
-
-\vspace{1cm}
-
-\simplestory
-{262}
-{Como diseñador del juego quiero cargar jugadores y sus datos estadísticos manualmente para que haya jugadores en el sistema.}
-{3 pt.}
-{Average}
-{\begin{itemize}
-\item Los porcentajes FG y 3P deben estar entre 0 y 100, APG $>=$ 0, RPG $>=$ 0, BPG $>=$ 0, SPG $>=$ 0, TO $>=$ 0, PPG $>=$ 0.
-\item Se ingresan los jugadores uno por uno.
-\end{itemize}}
-
-\vspace{1cm}
-
-\simplestory
-{265}
-{Como diseñador del juego quiero crear técnicos asociándolos con un libro de jugadas para que haya técnicos en el sistema}
-{2 pt.}
-{Average}
-{-}
 
 \vspace{1cm}
 
@@ -83,23 +132,6 @@ A continuación presentamos las user stories que forman parte de el backlog del 
 
 \vspace{1cm}
 
-\simplestory
-{242}
-{Como participante quiero ver tabla de posiciones en base a cantidad de fichas ganadas en apuestas para compararse con otros participantes.}
-{2 pt.}
-{Good}
-{-}
-
-\vspace{1cm}
-
-\simplestory
-{241}
-{Como participante quiero ver tabla de posiciones en base a desafíos ganados/perdidos para compararse con otros participantes.}
-{2 pt.}
-{Good}
-{-}
-
-\vspace{1cm}
 
 \simplestory
 {237}
@@ -110,28 +142,9 @@ A continuación presentamos las user stories que forman parte de el backlog del 
 
 \vspace{1cm}
 
-\simplestory
-{263}
-{Como diseñador del juego quiero cargar jugadores y sus datos estadísticos automáticamente desde una página o servicio web para que haya jugadores en el sistema.}
-{8 pt.}
-{Nice to Have}
-{\begin{itemize}
-\item Validaciones de los datos ingresados
-\item Parsear los datos de la fuente correspondiente
-\item Detalles de comunicación
-\end{itemize}}
 
-\vspace{1cm}
 
-\simplestory
-{261}
-{Como participante quiero ver la cantidad de puntos que realizó cada equipo en la simulación del desafío (score) y que se indique el ganador para saber qué tan bien o mal funcionó el equipo y observar a simple vista si gané o perdí.
-}
-{2 pt.}
-{Great}
-{-}
-
-\vspace{1cm}
+\subsection{Capital}
 
 \simplestory
 {234}
@@ -163,13 +176,19 @@ A continuación presentamos las user stories que forman parte de el backlog del 
 \vspace{1cm}
 
 \simplestory
-{247}
-{Como participante quiero ver las estadisticas personales de cada jugador para tener algún criterio en la confección de mi equipo.}
-{2 pt.}
+{246}
+{Como diseñador del juego quiero que quiero que al ganar un desafio por una diferencia abultada, el dueño del equipo reciba un pequeño aumento de su cap para para recompensar las elecciones tomadas por el apostador.}
+{1 pt.}
 {Great}
-{-}
+{\begin{itemize}
+\item Diferencia abultada = más de 20 puntos
+\item Aumento de cap del 1\%
+\end{itemize}}
 
 \vspace{1cm}
+
+
+\subsection{Fichas y Apuestas}
 
 \simplestory
 {233}
@@ -202,61 +221,66 @@ A continuación presentamos las user stories que forman parte de el backlog del 
 \vspace{1cm}
 
 \simplestory
-{216}
-{Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación.}
-{3 pt.}
-{Must Have}
+{242}
+{Como participante quiero ver tabla de posiciones en base a cantidad de fichas ganadas en apuestas para compararse con otros participantes.}
+{2 pt.}
+{Good}
 {-}
 
 \vspace{1cm}
 
-\simplestory
-{228}
-{Como usuario registrado quiero autenticarme en la aplicación usando mi cuenta de email y una contraseña para ingresar a la aplicación.}
-{3 pt.}
-{Must Have}
-{-}
 
-\vspace{1cm}
+\subsection{Datos estadísticos de jugadores}
 
 \simplestory
-{231}
-{Como participante quiero crear un desafío para aparecer en el listado de desafíos disponibles.}
-{3 pt.}
-{Must Have}
-{\begin{itemize}
-\item Sólo el workflow de creación del desafío, cada componente está en otra user story.
-Cuestiones de diseño
-\end{itemize}}
-
-\vspace{1cm}
-
-\simplestory
-{239}
-{Como participante desafiado quiero aceptar un desafío para ganar fichas e ir aumentando el ranking dentro del sistema.}
-{3 pt.}
-{Must Have}
-{\begin{itemize}
-\item Cuestiones de modelado
-\end{itemize}}
-
-\vspace{1cm}
-
-\simplestory
-{246}
-{Como diseñador de las apuestas quiero que quiero que al ganar un desafio por una diferencia abultada, el dueño del equipo reciba un pequeño aumento de su cap para para recompensar las elecciones tomadas por el apostador.}
-{1 pt.}
-{Great}
-{\begin{itemize}
-\item Diferencia abultada = más de 20 puntos
-\item Aumento de cap del 1\%
-\end{itemize}}
-
-\vspace{1cm}
-
-\simplestory
-{229}
-{Como usuario logueado quiero desloguearme para finalizar el uso de la aplicación.}
-{1 pt.}
+{247}
+{Como participante quiero ver las estadisticas personales de cada jugador para tener algún criterio en la confección de mi equipo.}
+{2 pt.}
 {Great}
 {-}
+
+\vspace{1cm}
+
+\simplestory
+{262}
+{Como diseñador del juego quiero cargar jugadores y sus datos estadísticos manualmente para que haya jugadores en el sistema.}
+{3 pt.}
+{Average}
+{\begin{itemize}
+\item Los porcentajes FG y 3P deben estar entre 0 y 100, APG $>=$ 0, RPG $>=$ 0, BPG $>=$ 0, SPG $>=$ 0, TO $>=$ 0, PPG $>=$ 0.
+\item Se ingresan los jugadores uno por uno.
+\end{itemize}}
+
+\vspace{1cm}
+
+\simplestory
+{263}
+{Como diseñador del juego quiero cargar jugadores y sus datos estadísticos automáticamente desde una página o servicio web para que haya jugadores en el sistema.}
+{8 pt.}
+{Nice to Have}
+{\begin{itemize}
+\item Validaciones de los datos ingresados
+\item Parsear los datos de la fuente correspondiente
+\item Detalles de comunicación
+\end{itemize}}
+
+\vspace{1cm}
+
+\simplestory
+{268}
+{Como diseñador del juego quiero que se obtengan datos de popularidad en Twitter de los jugadores para afectar las fórmulas de umbral de éxito.}
+{13 pt.}
+{Nice to Have}
+{Los datos tienen que obtenerse durante la simulación del partido y en lo posible tener en cuenta si son positivos o negativos.}
+
+\vspace{1cm}
+
+\subsection{Libro de Jugadas}
+\simplestory
+{265}
+{Como diseñador del juego quiero crear técnicos asociándolos con un libro de jugadas para que haya técnicos en el sistema}
+{2 pt.}
+{Average}
+{-}
+
+\vspace{1cm}
