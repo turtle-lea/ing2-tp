@@ -27,3 +27,475 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+\sprintstory
+{264}
+{Como diseñador del juego quiero que el juego tenga jugadas ofensivas y defensivas para asociar al libro de jugadas de los técnicos.}
+{5 pt.}
+{Must Have}
+{\begin{itemize}
+  \item Jugadas Ofensivas:
+  	\begin{itemize}
+  		\item Colectiva externa de 3 puntos luego de k pases (\textgreater0 fijo): La jugada comienza con la pelota en las manos del base (jugador en posición 1), deben hacerce k-1 pases con éxito (a cualquier jugador) y llegar en el pase número k a las manos de un jugador que juegue en las posiciones 1, 2 o 3, quien tira al aro por 3 puntos.
+  	\end{itemize}
+  \item Jugadas Defensivas:
+	\begin{itemize}
+	  		\item Hombre a Hombre: Cada jugador defensor sigue al jugador del equipo contrario que ocupa su misma posición. Cuando ese jugador tira al aro, el jugador defensor intenta bloquearlo. Cuando ese jugador intenta pasar la pelota, el jugador defensor intenta robarla interceptando el pase. Diseño del libro de jugadas.
+	\end{itemize}
+  \item Diseño del libro de jugadas.
+\end{itemize}}
+{Mostrar un listado con la descripción de la jugadas implementadas y su tipo (ofensiva/defensiva).
+Realizar un turno de una simulación en donde se ejecute una jugada ofensiva específica por parte del equipo atacante, y una jugada
+defensiva específica por parte del equipo defensivo.}
+
+\begin{taskstable}
+ \task
+ {Diseñar el libro de jugadas}
+ {2}
+ \task
+ {Implementar el modelo diseñado}
+ {1}
+ \task
+ {Implementar jugada defensiva 'Hombre a hombre'}
+ {0.5}
+ \task
+ {Implementar jugada ofensiva 'Colectiva externa de 3 puntos luego de k pases'}
+ {0.5}
+ \task
+ {Implementar un mecanismo para mostrar por pantalla las jugadas}
+ {0.5}
+ \task
+ {Testing unitario}
+ {0.5}
+
+\end{taskstable}
+
+\vspace{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{252}
+{Como diseñador del juego quiero que el equipo que posea la pelota en el primer turno de cada partido sea elegido al azar para para que el juego sea ecuánime en cuanto al comienzo del juego.}
+{1 pt.}
+{Must Have}
+{-}
+{Comparar los primeros turnos de varias simulaciones en donde se enfrentan el equipo A contra el equipo B. La posesión de la pelota en el primer turno de cada simulación debería haberse asignado varias veces al equipo A y varias veces al equipo B.}
+
+\begin{taskstable}
+ \task
+ {Diseñar primer turno}
+ {0.5}
+ \task
+ {Implementar el modelo diseñado}
+ {0.5}
+ \task
+ {Testing unitario}
+ {0.5}
+\end{taskstable}
+
+\vspace{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{251}
+{Como diseñador del juego quiero que el juego este dividido en 40 turnos para discretizar y acotar la duración de la simulación.}
+{1 pt.}
+{Must Have}
+{-}
+{Realizar una simulación. Si el juego no termina en empate entonces la suma entre las jugadas que terminaron con el balón fuera de la cancha y las jugadas en donde se encestó debería totalizar 40.}
+
+\begin{taskstable}
+ \task
+ {Diseñar turnos}
+ {1}
+ \task
+ {Implementación de turnos}
+ {1}
+ \task
+ {Testing unitario}
+ {0.5}
+\end{taskstable}
+
+\vspace{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{253}
+{Como diseñador del juego quiero que los equipos comiencen con la posesión inicial de la pelota de forma alternada para que el juego sea ecuánime en las oportunidades de victoria de cada equipo.}
+{1 pt.}
+{Must Have}
+{-}
+{Realizar una simulación. Al finalizar la misma, debería observarse que la posesión inicial de la pelota en cada turno fue intercalándose entre los equipos enfrentados.}
+
+\begin{taskstable}
+ \task
+ {Diseñar posesión inicial en cada turno}
+ {0.5}
+ \task
+ {Implementación}
+ {0.5}
+ \task
+ {Testing unitario}
+ {0.5}
+\end{taskstable}
+
+\vspace{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{254}
+{Como diseñador del juego quiero que las acciones de los jugadores tengan éxito en función de las fórmulas para que los resultados de la simulación sean realistas y se correspondan con las estadísticas de los jugadores.}
+{5 pt.}
+{Must Have}
+{}
+% {\begin{itemize}
+%   \item Umbral de éxito (UE) de jugador tirando al aro por 2 puntos: FG\% + P PG * 0.01 [+ hasta 0.20 dependiendo de twitter][+ APG * 0.025 de jugadores participantes en cadena de pases, hasta 0.3 de bonus máximo]
+%   \item UE de jugador tirando al aro por 3 puntos: 3 P\% + (P PG / 2) * 0.01 [+­ hasta 0.15 dependiendo de twitter][+ APG * 0.025 de jugadores participantes en cadena de pases, hasta 0.3 de bonus máximo]
+%   \item UE de jugador bloqueando un tiro de balón: B PG * 0.2][+­ hasta 0.15 dependiendo de twitter]
+%   \item UE de jugador pasando la pelota: 1 - T O * 0.1 [+­ hasta 0.30 dependiendo de twitter]
+%   \item UE de jugador robando un balón: SPG * 0.2 [+ hasta 0.30 dependiendo de twitter]
+%   \item UE de jugador rebotando la pelota: R PG * 0.05 [+­ hasta 0.20 dependiendo de twitter]
+% \end{itemize}}
+{Mostrar que en el log el umbral de cada jugada se corresponde con los valores estadísticos de los jugadores involucrados.}
+
+\begin{taskstable}
+ \task
+ {Diseñar el libro de jugadas}
+ {2}
+ \task
+ {Implementar los distintos caluladores}
+ {2}
+ \task
+ {Loggear el umbral de éxito por cada jugada}
+ {0.5}
+ \task
+ {Testing unitario}
+ {2}
+\end{taskstable}
+
+\vspace{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{257}
+{Como diseñador del juego quiero que solo los jugadores ofensivos pueden pasar la pelota, tirar de 2 puntos o tirar de 3 puntos para intentar sumar puntos o aumentar las probabilidades de anotar.}
+{2 pt.}
+{Must Have}
+{-}
+{Realizar una simulación. Los jugadores cuyo equipo estaba en posesión de la pelota son los únicos que deberían haber intentado un pase o un tiro.}
+
+\begin{taskstable}
+ \task
+ {Diseño}
+ {1}
+ \task
+ {Implementación}
+ {1}
+ \task
+ {Test}
+ {1}
+\end{taskstable}
+
+\vspace{1cm}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{258}
+{Como diseñador del juego quiero que solo los jugadores defensivos puedan bloquear un tiro o interceptar un pase para intentar contrarrestar la acción del rival.}
+{2 pt.}
+{Must Have}
+{-}
+{Realizar una simulación. Los jugadores cuyo equipo no estaba en posesión de la pelota son los únicos que deberían haber intentado bloquear un tiro o interceptar un pase.}
+
+\begin{taskstable}
+ \task
+ {Diseño}
+ {1}
+ \task
+ {Implementación}
+ {1}
+ \task
+ {Test}
+ {1}
+\end{taskstable}
+
+\vspace{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{255}
+{Como diseñador del juego quiero que cada vez que un equipo gane el balon o saque comenzando un turno nuevo, se elija una jugada ofensiva del técnico y se ejecute esa jugada para determinar las acciones que cada jugador realiza en un turno.}
+{8 pt.}
+{Must Have}
+{-}
+{Se realiza un turno de una simulación en donde el equipo A comienza con la posesión inicial de la pelota. Al finalizar el turno, se analizan las acciones
+hechas por los jugadores del equipo A, hasta perder el balón o haber anotado. Las mismas deberían coincidir con una de las jugadas ofensivas del técnico del equipo A. }
+
+\begin{taskstable}
+ \task
+ {Diseño de elección y ejecución de jugadas ofensivas}
+ {5}
+ \task
+ {Implementación}
+ {3}
+ \task
+ {Testing unitario}
+ {2}
+\end{taskstable}
+
+\vspace{1cm}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{256}
+{Como diseñador del juego quiero que cada vez que un equipo pierda el balon o el rival saque comenzando un turno nuevo, se elija una jugada defensiva del tecnico y se ejecute esa jugada para determinar las acciones que cada jugador realiza en un turno.}
+{8 pt.}
+{Must Have}
+{-}
+{Se realiza un turno de una simulación en donde el equipo B comienza defendiendo. Al finalizar el turno, se analizan las acciones
+hechas por los jugadores del equipo B, hasta que el equipo rival haya anotado o haber recuperado el balón. Las mismas deberían coincidir con una de las jugadas defensivas del técnico del equipo B.  }
+
+\begin{taskstable}
+ \task
+ {Diseño de elección y ejecución de jugadas defensivas}
+ {5}
+ \task
+ {Implementación}
+ {3}
+ \task
+ {Testing unitario}
+ {2}
+\end{taskstable}
+
+\vspace{1cm}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{248}
+{ Como diseñador del juego quiero que los jugadores realicen pases para evadir al equipo contrario y avanzar con la pelota.}
+{5 pt.}
+{Must Have}
+{\begin{itemize}
+	\item En el caso de ser exitoso, aumenta la chance de éxito de tiro del jugador que finalmente tira la pelota al aro en un pequeño porcentaje (su valor de APG * 0.025, hasta un máximo de 0.3).
+	\item En el caso de ser interceptado por un jugador del equipo rival, el mismo se hace con la pelota y ambos equipos intercambian los roles (ofensivo/defensivo)
+	\item En el caso de que el pase sea fallido y no robado por ningún jugador, la pelota se va fuera de la cancha y termina el turno
+\end{itemize}}
+{Realizar una simulación. Deberían observarse jugadas en donde la pelota vaya trasladándose entre jugadores del equipo que tenga la posesión del balón.}
+
+\begin{taskstable}
+ \task
+ {Diseñar pases}
+ {1.5}
+ \task
+ {Diseñar intercepción}
+ {1.5}
+ \task
+ {Diseñar lógica de interacción entre ambos}
+ {1.5}
+ \task
+ {Implementar pase}
+ {1}
+ \task
+ {Implementar intercepción}
+ {1}
+ \task
+ {Implementar lógica de interacción entre ambos}
+ {1}
+ \task
+ {Testing unitario}
+ {1.5}
+\end{taskstable}
+ 
+ \vspace{1cm}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{249}
+{Como diseñador del juego quiero que los jugadores tiren al aro para intentar aumentar los puntos de sus equipos}
+{3 pt.}
+{Must Have}
+{El tiro realizado por un jugador debe realizarse en posesión de la pelota y:
+\begin{itemize}
+	\item En el caso de ser exitoso, sume 2 o 3 puntos dependiendo del tipo de tiro
+	\item En el caso de que falle, o sea bloqueado la pelota queda dividida
+\end{itemize}}
+{Realizar una simulación en donde un jugador tenga estadísticas ficticias tales que determinan un umbral de éxito de acertar un tiro igual a 1.
+Dicho jugador debería realizar tiros de 2 y 3 puntos exitosamente.}
+
+\begin{taskstable}
+ \task
+ {Diseñar tiros}
+ {1.5}
+ \task
+ {Diseñar bloqueos}
+ {1.5}
+ \task
+ {Diseñar lógica de interacción entre ambos}
+ {1.5}
+ \task
+ {Diseñar interacción con reboteo}
+ {1.5}
+ \task
+ {Implementar bloqueos}
+ {1}
+ \task
+ {Implementar tiro}
+ {1}
+ \task
+ {Implementar lógica de interacción entre ambas}
+ {1}
+ \task
+ {Implementar interacción con reboteo}
+ {1}
+ \task
+ {Testing unitario}
+ {1.5}
+\end{taskstable}
+
+\vspace{1cm}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{250}
+{Como diseñador del juego quiero que si la pelota queda dividida en el aire todos los jugadores puedan saltar para intentar atraparla (rebotearla).}
+{8 pt.}
+{Must Have}
+{Los jugadores deben saltar de forma intercalada entre el equipo defensivo y ofensivo, en orden decreciente de posición (5 defensivo, 5 ofensivo, 4 defensivo, 4 ofensivo, etc.). Si alguno la atrapa, el turno no se acaba y el rol de atacante lo tendrá el equipo al que pertenezca el jugador que tomó la pelota. Si ninguno de los 10 jugadores la atrapa, la pelota sale de la cancha y se termina el turno.}
+{Realizar una simulación entre dos equipos donde los jugadores tengan estadísticas ficticias, de tal manera que sólo uno de los 10 jugadores tenga umbral de éxito de atrapar la pelota igual a 1 (según las fórmulas utilizadas) y el resto tengan umbral de éxito igual a 0. Debería suceder que ese jugador atrape la pelota, sin importar en qué posición o equipo juegue.}
+
+\begin{taskstable}
+ \task
+ {Diseñar reboteo}
+ {4}
+ \task
+ {Diseñar interacción con fin de turno}
+ {2}
+ \task
+ {Diseñar interacción con continuidad de jugada}
+ {2}
+ \task
+ {Implementar reboteo}
+ {2}
+ \task
+ {Implementar interacción con fin de turno}
+ {1}
+ \task
+ {Implementar interacción con continuidad de jugada}
+ {1}
+ \task
+ {Testing unitario}
+ {2}
+\end{taskstable}
+
+\vspace{1cm}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{260}
+{Como diseñador del juego quiero que el ganador de cada desafío sea el equipo que más puntos obtuvo en la simulación para que se corresponda con la realidad.}
+{1 pt.}
+{Must Have}
+{Asumimos que el score actual lo vamos guardando tras cada turno.}
+{Realizar una simulación. Al finalizar la misma, el equipo que se muestra como ganador debería ser aquel que tenga más puntos.}
+
+\begin{taskstable}
+ \task
+ {Diseñar score}
+ {2}
+ \task
+ {Implementar score}
+ {1}
+ \task
+ {Testing unitario}
+ {0.5}
+\end{taskstable}
+
+\vspace{1cm}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{259}
+{Como diseñador del juego quiero que si el resultado del partido después del último turno fue un empate entonces se realicen 6 turnos extra para no permitir resultados empatados.}
+{2 pt.}
+{Must Have}
+{Si luego de los 6 turnos queda en empate, se realizan otros 6, y así sucesivamente hasta que haya un ganador.}
+{Forzar una simulación en donde ambos equipos terminen empatados luego de los 40 turnos iniciales. El juego no debería finalizar y deberían jugarse 6 turnos más. Al finalizar el juego debería haber un ganador, y la cantidad de turnos extras jugados debería ser un múltiplo de 6.}
+
+\begin{taskstable}
+ \task
+ {Diseñar tiempo extra}
+ {2}
+ \task
+ {Implementar tiempo extra}
+ {2}
+ \task
+ {Testing unitario}
+ {1}
+\end{taskstable}
+
+\vspace{1cm}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sprintstory
+{240}
+{Como participante quiero acceder al detalles de todas las jugadas de todos los turnos de la simulación para analizar las distintas estrategias y mejorarlas.}
+{5 pt.}
+{Must Have}
+{\begin{itemize}
+	\item Generar el log/encolar
+	\item Persistirlo
+	\item Acceder un log persistido
+	\item Eventos que deben loguearse (cada uno con jugador/equipo que intervino y con qué rol).
+		\begin{itemize}
+			\item Comienzo de turno
+			\item Equipo en posesión de la pelota
+			\item Pase
+			\item Tiro (por 2 puntos y por 3 puntos)
+			\item Intercepción
+			\item Bloqueo
+			\item Pelota entra en reboteo
+			\item Pelota sale de la cancha
+			\item Jugador atrapa la pelota en el reboteo
+			\item Fin de turno
+			\item Anotación - Score
+			\item Resultado final
+		\end{itemize}
+\end{itemize}}
+{Se realiza una simulación entre 2 equipos. Al finalizar la misma, debería mostrarse un listado separado por turnos con todas las acciones realizadas por cada jugador indicando si fueron exitosas o no.}
+
+\begin{taskstable}
+ \task
+ {Diseñar log}
+ {2}
+ \task
+ {Diseñar interacción con todas las acciones del juego}
+ {2}
+ \task
+ {Implementar log}
+ {1}
+ \task
+ {Implementar interacciones con todas las acciones del juego}
+ {2}
+ \task
+ {Testing unitario}
+ {2}
+\end{taskstable}
+
+
+
+
+
+
