@@ -151,15 +151,14 @@ defensiva específica por parte del equipo defensivo.}
 {Como diseñador del juego quiero que las acciones de los jugadores tengan éxito en función de las fórmulas para que los resultados de la simulación sean realistas y se correspondan con las estadísticas de los jugadores.}
 {5 pt.}
 {Must Have}
-{}
-% {\begin{itemize}
-%   \item Umbral de éxito (UE) de jugador tirando al aro por 2 puntos: FG\% + P PG * 0.01 [+ hasta 0.20 dependiendo de twitter][+ APG * 0.025 de jugadores participantes en cadena de pases, hasta 0.3 de bonus máximo]
-%   \item UE de jugador tirando al aro por 3 puntos: 3 P\% + (P PG / 2) * 0.01 [+­ hasta 0.15 dependiendo de twitter][+ APG * 0.025 de jugadores participantes en cadena de pases, hasta 0.3 de bonus máximo]
-%   \item UE de jugador bloqueando un tiro de balón: B PG * 0.2][+­ hasta 0.15 dependiendo de twitter]
-%   \item UE de jugador pasando la pelota: 1 - T O * 0.1 [+­ hasta 0.30 dependiendo de twitter]
-%   \item UE de jugador robando un balón: SPG * 0.2 [+ hasta 0.30 dependiendo de twitter]
-%   \item UE de jugador rebotando la pelota: R PG * 0.05 [+­ hasta 0.20 dependiendo de twitter]
-% \end{itemize}}
+{\begin{itemize}
+    \item Umbral de éxito (UE) de jugador tirando al aro por 2 puntos: $FG\% + PPG*0.1 $[$\pm$ hasta 0.20 dependiendo de twitter][+ APG * 0.025 de jugadores participantes en cadena de pases, hasta 0.3 de bonus máximo] 
+    \item UE de jugador tirando al aro por 3 puntos: $3P\% + \frac{PPG}{2}* 0.01$ [$\pm$ hasta 0.15 dependiendo de twitter] [+ APG * 0.025 de jugadores participantes en cadena de pases, hasta 0.3 de bonus máximo]
+    \item UE de jugador bloqueando un tiro de balón: $BPG * 0.2$ [$\pm$ hasta 0.15 dependiendo de twitter]
+    \item UE de jugador pasando la pelota: $1 - TO * 0.1$ [$\pm$ hasta 0.30 dependiendo de twitter]
+    \item UE de jugador robando un balon: $SPG * 0.2$ [$\pm$ hasta 0.30 dependiendo de twitter]
+    \item UE de jugador rebotando la pelota: $RPG * 0.05$ [$\pm$ hasta 0.20 dependiendo de twitter]
+\end{itemize}}
 {Mostrar que en el log el umbral de cada jugada se corresponde con los valores estadísticos de los jugadores involucrados.}
 
 \begin{taskstable}
