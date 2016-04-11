@@ -33,7 +33,8 @@
 {Como diseñador del juego quiero que el juego tenga jugadas ofensivas y defensivas para asociar al libro de jugadas de los técnicos.}
 {5 pt.}
 {Must Have}
-{\begin{itemize}
+{Consiste en crear dos jugadas, una ofensiva y otra defensiva:
+\begin{itemize}
   \item Jugadas Ofensivas:
   	\begin{itemize}
   		\item Colectiva externa de 3 puntos luego de k pases (\textgreater0 fijo): La jugada comienza con la pelota en las manos del base (jugador en posición 1), deben hacerce k-1 pases con éxito (a cualquier jugador) y llegar en el pase número k a las manos de un jugador que juegue en las posiciones 1, 2 o 3, quien tira al aro por 3 puntos.
@@ -42,8 +43,8 @@
 	\begin{itemize}
 	  		\item Hombre a Hombre: Cada jugador defensor sigue al jugador del equipo contrario que ocupa su misma posición. Cuando ese jugador tira al aro, el jugador defensor intenta bloquearlo. Cuando ese jugador intenta pasar la pelota, el jugador defensor intenta robarla interceptando el pase. Diseño del libro de jugadas.
 	\end{itemize}
-  \item Diseño del libro de jugadas.
-\end{itemize}}
+\end{itemize}
+Estas jugadas luego se utilizar\'an en el libro de jugadas de los técnicos.}
 {Mostrar un listado con la descripción de la jugadas implementadas y su tipo (ofensiva/defensiva).
 Realizar un turno de una simulación en donde se ejecute una jugada ofensiva específica por parte del equipo atacante, y una jugada
 defensiva específica por parte del equipo defensivo.}
@@ -79,7 +80,7 @@ defensiva específica por parte del equipo defensivo.}
 {Como diseñador del juego quiero que el equipo que posea la pelota en el primer turno de cada partido sea elegido al azar para para que el juego sea ecuánime en cuanto al comienzo del juego.}
 {1 pt.}
 {Must Have}
-{-}
+{Especifica qué equipo empezará con la pelota en el primer turno de un desafío.}
 {Comparar los primeros turnos de varias simulaciones en donde se enfrentan el equipo A contra el equipo B. La posesión de la pelota en el primer turno de cada simulación debería haberse asignado varias veces al equipo A y varias veces al equipo B.}
 
 \begin{taskstable}
@@ -127,7 +128,7 @@ defensiva específica por parte del equipo defensivo.}
 {Como diseñador del juego quiero que los equipos comiencen con la posesión inicial de la pelota de forma alternada para que el juego sea ecuánime en las oportunidades de victoria de cada equipo.}
 {1 pt.}
 {Must Have}
-{-}
+{Si el equipo A sacó en el primer turno, el equipo B sacará en el segundo, el A en el tercero y así sucesivamente.}
 {Realizar una simulación. Al finalizar la misma, debería observarse que la posesión inicial de la pelota en cada turno fue intercalándose entre los equipos enfrentados.}
 
 \begin{taskstable}
@@ -186,7 +187,9 @@ defensiva específica por parte del equipo defensivo.}
 {Como diseñador del juego quiero que solo los jugadores ofensivos pueden pasar la pelota, tirar de 2 puntos o tirar de 3 puntos para intentar sumar puntos o aumentar las probabilidades de anotar.}
 {2 pt.}
 {Must Have}
-{-}
+{Se definen las acciones que sólo pueden realizar los jugadores del equipo ofensivo (los jugadores defensivos no pueden realizarlas). En el caso
+de un tiro, les sirve para anotar puntos; en el caso de los pases, les sirve para aumentar la probabilidad de embocar el tiro (si llegan al aro).
+Las reglas de los tiros y los pases se explicitan en otras stories (\#248 y \#249)}
 {Realizar una simulación. Los jugadores cuyo equipo estaba en posesión de la pelota son los únicos que deberían haber intentado un pase o un tiro.}
 
 \begin{taskstable}
@@ -210,7 +213,7 @@ defensiva específica por parte del equipo defensivo.}
 {Como diseñador del juego quiero que solo los jugadores defensivos puedan bloquear un tiro o interceptar un pase para intentar contrarrestar la acción del rival.}
 {2 pt.}
 {Must Have}
-{-}
+{Es análoga a la story \#257 para los jugadores defensivos. Bloqueos e intercepciones se especifican en las stories \#248 y \#249.}
 {Realizar una simulación. Los jugadores cuyo equipo no estaba en posesión de la pelota son los únicos que deberían haber intentado bloquear un tiro o interceptar un pase.}
 
 \begin{taskstable}
@@ -234,7 +237,9 @@ defensiva específica por parte del equipo defensivo.}
 {Como diseñador del juego quiero que cada vez que un equipo gane el balon o saque comenzando un turno nuevo, se elija una jugada ofensiva del técnico y se ejecute esa jugada para determinar las acciones que cada jugador realiza en un turno.}
 {8 pt.}
 {Must Have}
-{-}
+{Especifica cómo prosigue el juego luego de que un equipo comienza a comportarse como ``atacante''. Esto último sucede si comienza un nuevo turno
+y al equipo le toca sacar el balón o bien si durante cualquier turno el equipo roba o intercepta la pelota. En cualquier caso, se elige una jugada
+del libro de jugadas ofensivas y se comienza a ejecutar.}
 {Se realiza un turno de una simulación en donde el equipo A comienza con la posesión inicial de la pelota. Al finalizar el turno, se analizan las acciones
 hechas por los jugadores del equipo A, hasta perder el balón o haber anotado. Las mismas deberían coincidir con una de las jugadas ofensivas del técnico del equipo A. }
 
@@ -259,7 +264,8 @@ hechas por los jugadores del equipo A, hasta perder el balón o haber anotado. L
 {Como diseñador del juego quiero que cada vez que un equipo pierda el balon o el rival saque comenzando un turno nuevo, se elija una jugada defensiva del tecnico y se ejecute esa jugada para determinar las acciones que cada jugador realiza en un turno.}
 {8 pt.}
 {Must Have}
-{-}
+{Es el caso contrario a la story \#256. En este caso se especifica como prosigue el juego cuando el equipo pierde el balón o comienza un nuevo turno en
+el que el rival tiene el balón. En este caso, se elige una jugada ofensiva y se comienza a ejecutar.}
 {Se realiza un turno de una simulación en donde el equipo B comienza defendiendo. Al finalizar el turno, se analizan las acciones
 hechas por los jugadores del equipo B, hasta que el equipo rival haya anotado o haber recuperado el balón. Las mismas deberían coincidir con una de las jugadas defensivas del técnico del equipo B.  }
 
@@ -284,7 +290,8 @@ hechas por los jugadores del equipo B, hasta que el equipo rival haya anotado o 
 { Como diseñador del juego quiero que los jugadores realicen pases para evadir al equipo contrario y avanzar con la pelota.}
 {5 pt.}
 {Must Have}
-{\begin{itemize}
+{El pase realizado por un jugador debe realizarse en posesión de la pelota y:
+\begin{itemize}
 	\item En el caso de ser exitoso, aumenta la chance de éxito de tiro del jugador que finalmente tira la pelota al aro en un pequeño porcentaje (su valor de APG * 0.025, hasta un máximo de 0.3).
 	\item En el caso de ser interceptado por un jugador del equipo rival, el mismo se hace con la pelota y ambos equipos intercambian los roles (ofensivo/defensivo)
 	\item En el caso de que el pase sea fallido y no robado por ningún jugador, la pelota se va fuera de la cancha y termina el turno
@@ -406,7 +413,8 @@ Dicho jugador debería realizar tiros de 2 y 3 puntos exitosamente.}
 {Como diseñador del juego quiero que el ganador de cada desafío sea el equipo que más puntos obtuvo en la simulación para que se corresponda con la realidad.}
 {1 pt.}
 {Must Have}
-{Asumimos que el score actual lo vamos guardando tras cada turno.}
+{Especifica cómo seleccionar al equipo ganador. 
+Asumimos que el score lo vamos guardando minuto a minuto tras cada turno para realizar la estimación.}
 {Realizar una simulación. Al finalizar la misma, el equipo que se muestra como ganador debería ser aquel que tenga más puntos.}
 
 \begin{taskstable}
@@ -455,9 +463,9 @@ Dicho jugador debería realizar tiros de 2 y 3 puntos exitosamente.}
 {5 pt.}
 {Must Have}
 {\begin{itemize}
-	\item Generar el log/encolar
-	\item Persistirlo
-	\item Acceder un log persistido
+	\item Generar el log encolando los eventos de alguna manera.
+	\item Persistirlo.
+	\item Acceder el log persistido.
 	\item Eventos que deben loguearse (cada uno con jugador/equipo que intervino y con qué rol).
 		\begin{itemize}
 			\item Comienzo de turno
