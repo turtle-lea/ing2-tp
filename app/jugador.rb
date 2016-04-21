@@ -1,6 +1,9 @@
 class Jugador
-  def initialize(nombre, equipo)
+  def initialize(nombre)
     @nombre = nombre
+  end
+
+  def asignarEquipo(equipo)
     @equipo = equipo
   end
 
@@ -18,6 +21,7 @@ class Jugador
   end
 
   def recibirPelota()
+    puts "Soy #{@nombre} y recibi la pelota"
   end
 
 end
