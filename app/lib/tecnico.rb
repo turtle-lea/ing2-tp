@@ -1,8 +1,11 @@
 class Tecnico
-	def initialize(unEquipo, unLibroDeJugadas)
+	def initialize(unLibroDeJugadas = [])
 		@libroDeJugadas = unLibroDeJugadas
-		@equipo = unEquipo
 	end
+
+  def asignar_equipo(equipo)
+    @equipo = equipo
+  end
 
 	def elegirJugadaOfensiva()
 		unGeneradorDeJugadaOfensiva = @libroDeJugadas.obtenerGeneradorDeJugadaOfensiva()

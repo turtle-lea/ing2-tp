@@ -19,8 +19,9 @@ describe Equipo do
     unAlero = Jugador.new("x3", posicion_alero)
     unPivot = Jugador.new("x4", posicion_pivot)
     unEscolta = Jugador.new("x5", posicion_pivot)
+    un_tecnico = Tecnico.new
 
-    los_pumas = Equipo.new("Los Pumas", unBase, unEscolta, unAlero, unAla, unPivot)
+    los_pumas = Equipo.new("Los Pumas", unBase, unEscolta, unAlero, unAla, unPivot, un_tecnico)
     expect(los_pumas.base).to eq(unBase)
   end
 end

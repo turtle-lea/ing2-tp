@@ -1,11 +1,12 @@
 class Equipo
-  def initialize(nombre, base, escolta, alero, pivot, alapivot)
-    @nombre = nombre 
-    @base = base 
-    @escolta = escolta 
-    @alero = alero 
-    @pivot = pivot 
-    @alapivot = alapivot 
+  def initialize(nombre, base, escolta, alero, pivot, alapivot, tecnico)
+    @nombre = nombre
+    @base = base
+    @escolta = escolta
+    @alero = alero
+    @pivot = pivot
+    @alapivot = alapivot
+    @tecnico = tecnico
   end
 
   def asignarOponente(unOponente)
@@ -14,7 +15,7 @@ class Equipo
 
   def nombre
     @nombre
-  end 
+  end
 
   def jugadores
     [base, escolta, alero, pivot, alapivot]
@@ -46,6 +47,10 @@ class Equipo
 
   def alapivot()
     @alapivot
+  end
+
+  def tecnico
+    @tecnico
   end
 end
 
