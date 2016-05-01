@@ -5,7 +5,8 @@ class Pase
     @jugador_origen = jugador_origen
     @jugador_destino = jugador_destino
     @resolvedor_de_pase = ResolvedorDePase.new
-    @movimientoDefensivo = MovimientoDefensivoNulo.new
+    #No es necesario. La jugada ofensiva garantiza una asignación de movimiento antes de la ejecución
+    #@movimientoDefensivo = MovimientoDefensivoNulo.new
   end
 
   def ejecutar()
@@ -23,6 +24,10 @@ class Pase
 
   def asignarMovimientoDefensivo(unMovimientoDefensivo)
     @movimientoDefensivo = unMovimientoDefensivo
+  end
+
+  def jugador_origen
+    @jugador_origen
   end
 end
 

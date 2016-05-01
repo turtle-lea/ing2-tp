@@ -23,5 +23,9 @@ class Equipo
   def base()
     @base
   end
+
+  def ala()
+    @ala
+  end
 end
 
