@@ -1,8 +1,8 @@
-require 'posicion_base'
-require 'posicion_ala'
-require 'posicion_pivot'
-require 'posicion_escolta'
-require 'posicion_alero'
+require 'posiciones/posicion_base'
+require 'posiciones/posicion_ala'
+require 'posiciones/posicion_pivot'
+require 'posiciones/posicion_escolta'
+require 'posiciones/posicion_alero'
 require 'jugador'
 require 'equipo'
 

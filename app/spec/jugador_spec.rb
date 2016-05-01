@@ -1,4 +1,4 @@
-require 'posicion_base'
+require 'posiciones/posicion_base'
 
 describe Jugador do
   it "devuelve el equipo correcto" do
