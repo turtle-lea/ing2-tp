@@ -33,6 +33,11 @@ class Jugador
     puts "Soy #{@nombre} y recibi la pelota"
   end
 
+  ### Solo para testing
+  def adapterJugadaDefensiva()
+    @adapterJugadaDefensiva
+  end
+
   def actualizarAdapterJugadaDefensiva(adapter)
     @adapterJugadaDefensiva = adapter
     adapter.asignarJugador self

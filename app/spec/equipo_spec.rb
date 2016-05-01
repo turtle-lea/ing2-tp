@@ -1,5 +1,5 @@
 require 'posiciones/posicion_base'
-require 'posiciones/posicion_ala'
+require 'posiciones/posicion_ala_pivot'
 require 'posiciones/posicion_pivot'
 require 'posiciones/posicion_escolta'
 require 'posiciones/posicion_alero'
@@ -9,7 +9,7 @@ require 'equipo'
 describe Equipo do
   it "un equipo conoce a su base" do
     posicion_base = PosicionBase.new
-    posicion_ala = PosicionAla.new
+    posicion_ala = PosicionAlaPivot.new
     posicion_alero = PosicionAlero.new
     posicion_escolta = PosicionEscolta.new
     posicion_pivot = PosicionPivot.new

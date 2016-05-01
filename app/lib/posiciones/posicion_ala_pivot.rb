@@ -1,4 +1,4 @@
-class PosicionAla
+class PosicionAlaPivot
   def initialize
   end
 end

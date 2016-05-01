@@ -4,8 +4,8 @@ class GeneradorDeJugadaOfensiva3PuntosKPases
 		@frecuenciaDeUso = unaFrecuenciaDeUso
 	end
 
-	def generarJugada(unEquipo, unaJugadaDefensiva)
-		JugadaOfensiva3PuntosKPases.new(unEquipo, unaJugadaDefensiva, @cantidadDePases)
+	def generarJugada(unEquipo)
+		JugadaOfensiva3PuntosKPases.new(unEquipo, @cantidadDePases)
 	end
 
 	def frecuenciaDeUso()

@@ -4,8 +4,8 @@ class Tecnico
 		@equipo = unEquipo
 	end
 
-	def elegirJugadaOfensiva(unaJugadaDefensiva)
+	def elegirJugadaOfensiva()
 		unGeneradorDeJugadaOfensiva = @libroDeJugadas.obtenerGeneradorDeJugadaOfensiva()
-		unGeneradorDeJugadaOfensiva.generarJugada(@equipo, unaJugadaDefensiva)
+		unGeneradorDeJugadaOfensiva.generarJugada(@equipo)
 	end
 end

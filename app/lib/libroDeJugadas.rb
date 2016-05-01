@@ -1,10 +1,10 @@
 class LibroDeJugadas
 	def initialize(unArregloDeGeneradoresDeJugadaOfensiva, unArregloDeJugadasDefensivas)
 		self.validarConsistenciaDeFrecuencias(unArregloDeGeneradoresDeJugadaOfensiva)
-		# self.validarConsistenciaDeFrecuencias(unArregloDeJugadasDefensivas)
+		#self.validarConsistenciaDeFrecuencias(unArregloDeJugadasDefensivas)
 
 		@generadoresDeJugadaOfensiva = unArregloDeGeneradoresDeJugadaOfensiva
-		@jugadasDefensivas = unArregloDeJugadasDefensivas
+		#@generadoresDejugadasDefensivas = unArregloDeJugadasDefensivas
 	end
 
 	def obtenerGeneradorDeJugadaOfensiva()

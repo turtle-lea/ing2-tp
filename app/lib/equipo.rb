@@ -12,6 +12,14 @@ class Equipo
     @oponente = unOponente
   end
 
+  def nombre
+    @nombre
+  end 
+
+  def jugadores
+    [base, escolta, alero, pivot, alapivot]
+  end
+
   def oponente
     @oponente
   end
@@ -24,8 +32,20 @@ class Equipo
     @base
   end
 
-  def ala()
-    @ala
+  def escolta()
+    @escolta
+  end
+
+  def alero()
+    @alero
+  end
+
+  def pivot()
+    @pivot
+  end
+
+  def alapivot()
+    @alapivot
   end
 end
 
