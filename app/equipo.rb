@@ -19,5 +19,9 @@ class Equipo
   def interceptarPase(unPase)
     @base.interceptarPase(unPase)
   end
+
+  def base()
+    @base
+  end
 end
 

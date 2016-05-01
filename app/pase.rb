@@ -5,20 +5,24 @@ class Pase
     @jugador_origen = jugador_origen
     @jugador_destino = jugador_destino
     @resolvedor_de_pase = ResolvedorDePase.new
+    @movimientoDefensivo = MovimientoDefensivoNulo.new
   end
 
-  def intentar()
-    @resolvedor_de_pase.verificarExitoDePase(self)
+  def ejecutar()
+    esPaseExitoso = @resolvedor_de_pase.verificarExitoDePase(self)
+    esDefensaExitosa = @movimientoDefensivo.esExitoso()
+
+    if esDefensaExitosa
+      @movimientoDefensivo.ejecutar()
+    elsif esPaseExitoso
+      @jugador_origen.pasarLaPelota(@jugador_destino)
+    else
+      @jugador_origen.tirarPelotaAfuera()
+    end
   end
 
-  def paseExitoso()
-    equipo_rival = @jugador_origen.equipo.oponente
-    equipo_rival.interceptarPase(self)
+  def asignarMovimientoDefensivo(unMovimientoDefensivo)
+    @movimientoDefensivo = unMovimientoDefensivo
   end
-
-  def intercepcionFallida
-    @jugador_destino.recibirPelota()
-  end
-
 end
 
