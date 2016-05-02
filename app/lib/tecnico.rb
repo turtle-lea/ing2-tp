@@ -11,4 +11,9 @@ class Tecnico
 		unGeneradorDeJugadaOfensiva = @libroDeJugadas.obtenerGeneradorDeJugadaOfensiva()
 		unGeneradorDeJugadaOfensiva.generarJugada(@equipo)
 	end
+
+  def elegirJugadaDefensiva(unaJugadaOfensivaRival)
+    unGeneradorDeJugadaDefensiva = @libroDeJugadas.obtenerGeneradorDeJugadaDefensiva()
+		unGeneradorDeJugadaDefensiva.generarJugada(@equipo, unaJugadaOfensivaRival)
+  end
 end

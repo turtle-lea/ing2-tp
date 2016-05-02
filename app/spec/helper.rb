@@ -20,7 +20,6 @@ def equipo_los_pumas(un_tecnico = Tecnico.new)
     escolta_nicolas = Jugador.new("Nicolas", posicion_pivot)
 
     los_pumas = Equipo.new("Los Pumas", base_martin, escolta_nicolas, alero_leandro, ala_pivot_gaston, pivot_matias, un_tecnico)
-    un_tecnico.asignar_equipo(los_pumas)
     los_pumas
 end
 
@@ -38,7 +37,6 @@ def equipo_warriors(un_tecnico = Tecnico.new)
     thompson = Jugador.new("Thompson", posicion_escolta)
 
     los_warrios = Equipo.new("Warriors", curry, thompson, barnes, green, bogut, un_tecnico)
-    un_tecnico.asignar_equipo(los_warrios)
     los_warrios
 end
 

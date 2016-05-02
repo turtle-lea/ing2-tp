@@ -17,11 +17,6 @@ class JugadaOfensiva3PuntosKPases
     @jugadaDefensiva = unaJugadaDefensiva
   end
 
-  ### Agregada únicamente para testing
-  def jugadaDefensiva()
-    @jugadaDefensiva
-  end
-
 	def proximoMovimiento()
 		portadorDelBalon = self.portadorDelBalon()
 

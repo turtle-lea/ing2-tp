@@ -1,30 +1,40 @@
 require 'generadorDeJugadaOfensiva3PuntosKPases'
+require 'generadorDeJugadaDefensivaHombreAHombre'
+require 'jugadaDefensivaHombreAHombre'
 require 'cantidadDePases'
 require 'frecuenciaDeUso'
 require 'tecnico'
 require 'generadorDeNumerosAleatorios'
 
 class LibroDeJugadas
-	def initialize(unArregloDeGeneradoresDeJugadaOfensiva, unArregloDeJugadasDefensivas)
+	def initialize(unArregloDeGeneradoresDeJugadaOfensiva, unArregloDeGeneradoresDeJugadaDefensiva)
 		self.validarConsistenciaDeFrecuencias(unArregloDeGeneradoresDeJugadaOfensiva)
-		#self.validarConsistenciaDeFrecuencias(unArregloDeJugadasDefensivas)
+		self.validarConsistenciaDeFrecuencias(unArregloDeGeneradoresDeJugadaDefensiva)
 
 		@generadoresDeJugadaOfensiva = unArregloDeGeneradoresDeJugadaOfensiva
-		#@generadoresDejugadasDefensivas = unArregloDeJugadasDefensivas
+		@generadoresDeJugadaDefensiva = unArregloDeGeneradoresDeJugadaDefensiva
 	end
 
-	def obtenerGeneradorDeJugadaOfensiva()
+	def obtenerGeneradorDeJugada(unArregloDeGeneradores)
 		unGeneradorDeNumerosAleatorios = GeneradorDeNumerosAleatorios.new(0,100)
 		unNumeroAleatorio = unGeneradorDeNumerosAleatorios.generar()
 		sumaDeValoresPorcentuales = 0
-		@generadoresDeJugadaOfensiva.each do 
-			|unGeneradorDeJugadaOfensiva|
-			sumaDeValoresPorcentuales = sumaDeValoresPorcentuales + unGeneradorDeJugadaOfensiva.frecuenciaDeUso().valorPorcentual()
+		unArregloDeGeneradores.each do 
+			|unGeneradorDeJugada|
+			sumaDeValoresPorcentuales = sumaDeValoresPorcentuales + unGeneradorDeJugada.frecuenciaDeUso().valorPorcentual()
 			if unNumeroAleatorio <= sumaDeValoresPorcentuales
-				return unGeneradorDeJugadaOfensiva
+				return unGeneradorDeJugada
 			end			
 		end
 	end
+
+  def obtenerGeneradorDeJugadaOfensiva
+    self.obtenerGeneradorDeJugada(@generadoresDeJugadaOfensiva)
+  end
+
+  def obtenerGeneradorDeJugadaDefensiva
+    self.obtenerGeneradorDeJugada(@generadoresDeJugadaDefensiva)
+  end
 
 	def validarConsistenciaDeFrecuencias(unArregloDeGeneradoresDeJugada)
 		sumaDeValoresPorcentuales = 0

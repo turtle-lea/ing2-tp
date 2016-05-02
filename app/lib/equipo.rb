@@ -7,6 +7,7 @@ class Equipo
     @pivot = pivot
     @alapivot = alapivot
     @tecnico = tecnico
+    tecnico.asignar_equipo(self)
   end
 
   def asignarOponente(unOponente)

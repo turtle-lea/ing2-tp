@@ -2,7 +2,8 @@ require 'jugadaOfensiva3PuntosKPases'
 require 'adapterJugadaDefensivaHombreAHombre'
 
 class GeneradorDeJugadaDefensivaHombreAHombre
-	def initialize()
+	def initialize(unaFrecuenciaDeUso)
+    @frecuenciaDeUso = unaFrecuenciaDeUso
 	end
 
 	def generarJugada(unEquipo, unaJugadaOfensivaRival)
