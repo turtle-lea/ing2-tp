@@ -12,4 +12,20 @@ class JugadaDefensivaHombreAHombre
   def base
     @miEquipo.base
   end
+
+  def escolta
+    @miEquipo.escolta
+  end
+
+  def alero
+    @miEquipo.alero
+  end
+
+  def pivot
+    @miEquipo.pivot
+  end
+
+  def alapivot
+    @miEquipo.alapivot
+  end
 end
