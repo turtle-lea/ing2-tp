@@ -1,15 +1,15 @@
-require 'posicion_base'
-require 'posicion_ala'
-require 'posicion_pivot'
-require 'posicion_escolta'
-require 'posicion_alero'
+require 'posiciones/posicion_base'
+require 'posiciones/posicion_ala_pivot'
+require 'posiciones/posicion_pivot'
+require 'posiciones/posicion_escolta'
+require 'posiciones/posicion_alero'
 require 'jugador'
 require 'equipo'
 
 describe Equipo do
   it "un equipo conoce a su base" do
     posicion_base = PosicionBase.new
-    posicion_ala = PosicionAla.new
+    posicion_ala = PosicionAlaPivot.new
     posicion_alero = PosicionAlero.new
     posicion_escolta = PosicionEscolta.new
     posicion_pivot = PosicionPivot.new
@@ -19,8 +19,9 @@ describe Equipo do
     unAlero = Jugador.new("x3", posicion_alero)
     unPivot = Jugador.new("x4", posicion_pivot)
     unEscolta = Jugador.new("x5", posicion_pivot)
+    un_tecnico = Tecnico.new
 
-    los_pumas = Equipo.new("Los Pumas", unBase, unEscolta, unAlero, unAla, unPivot)
+    los_pumas = Equipo.new("Los Pumas", unBase, unEscolta, unAlero, unAla, unPivot, un_tecnico)
     expect(los_pumas.base).to eq(unBase)
   end
 end

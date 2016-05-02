@@ -1,13 +1,21 @@
 class JugadaOfensiva3PuntosKPases
-	def initialize(unEquipo, unaJugadaDefensiva, unaCantidadDePases)
+	def initialize(unEquipo, unaCantidadDePases)
 		@equipo = unEquipo
-		@jugadaDefensiva = unaJugadaDefensiva
+		#@jugadaDefensiva = unaJugadaDefensiva
 		@cantidadDePasesRestantes = unaCantidadDePases
 	end
 
 	def jugadorInicial()
 		@equipo.base()
 	end
+
+  def equipo()
+    @equipo
+  end
+
+  def colaborarConJugadaDefensiva(unaJugadaDefensiva)
+    @jugadaDefensiva = unaJugadaDefensiva
+  end
 
 	def proximoMovimiento()
 		portadorDelBalon = self.portadorDelBalon()

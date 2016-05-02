@@ -21,8 +21,8 @@ class Jugador
   end
 
   def pasarLaPelota(otroJugador)
-    p = Pase.new(self, otroJugador) 
-    p.intentar() 
+    p = Pase.new(self, otroJugador)
+    p.intentar()
   end
 
   def interceptarPase(unPase)
@@ -31,6 +31,11 @@ class Jugador
 
   def recibirPelota()
     puts "Soy #{@nombre} y recibi la pelota"
+  end
+
+  ### Solo para testing
+  def adapterJugadaDefensiva()
+    @adapterJugadaDefensiva
   end
 
   def actualizarAdapterJugadaDefensiva(adapter)

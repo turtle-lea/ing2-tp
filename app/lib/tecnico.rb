@@ -1,11 +1,19 @@
 class Tecnico
-	def initialize(unEquipo, unLibroDeJugadas)
+	def initialize(unLibroDeJugadas = [])
 		@libroDeJugadas = unLibroDeJugadas
-		@equipo = unEquipo
 	end
 
-	def elegirJugadaOfensiva(unaJugadaDefensiva)
+  def asignar_equipo(equipo)
+    @equipo = equipo
+  end
+
+	def elegirJugadaOfensiva()
 		unGeneradorDeJugadaOfensiva = @libroDeJugadas.obtenerGeneradorDeJugadaOfensiva()
-		unGeneradorDeJugadaOfensiva.generarJugada(@equipo, unaJugadaDefensiva)
+		unGeneradorDeJugadaOfensiva.generarJugada(@equipo)
 	end
+
+  def elegirJugadaDefensiva(unaJugadaOfensivaRival)
+    unGeneradorDeJugadaDefensiva = @libroDeJugadas.obtenerGeneradorDeJugadaDefensiva()
+		unGeneradorDeJugadaDefensiva.generarJugada(@equipo, unaJugadaOfensivaRival)
+  end
 end

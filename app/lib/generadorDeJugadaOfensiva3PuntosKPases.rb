@@ -1,11 +1,13 @@
+require 'jugadaOfensiva3PuntosKPases'
+
 class GeneradorDeJugadaOfensiva3PuntosKPases
 	def initialize(unaCantidadDePases, unaFrecuenciaDeUso)
 		@cantidadDePases = unaCantidadDePases
 		@frecuenciaDeUso = unaFrecuenciaDeUso
 	end
 
-	def generarJugada(unEquipo, unaJugadaDefensiva)
-		JugadaOfensiva3PuntosKPases.new(unEquipo, unaJugadaDefensiva, @cantidadDePases)
+	def generarJugada(unEquipo)
+		JugadaOfensiva3PuntosKPases.new(unEquipo, @cantidadDePases)
 	end
 
 	def frecuenciaDeUso()
