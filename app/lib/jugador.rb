@@ -21,8 +21,8 @@ class Jugador
   end
 
   def pasarLaPelota(otroJugador)
-    p = Pase.new(self, otroJugador) 
-    p.intentar() 
+    p = Pase.new(self, otroJugador)
+    p.intentar()
   end
 
   def interceptarPase(unPase)

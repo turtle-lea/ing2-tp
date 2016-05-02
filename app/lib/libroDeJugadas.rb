@@ -19,12 +19,12 @@ class LibroDeJugadas
 		unGeneradorDeNumerosAleatorios = GeneradorDeNumerosAleatorios.new(0,100)
 		unNumeroAleatorio = unGeneradorDeNumerosAleatorios.generar()
 		sumaDeValoresPorcentuales = 0
-		unArregloDeGeneradores.each do 
+		unArregloDeGeneradores.each do
 			|unGeneradorDeJugada|
 			sumaDeValoresPorcentuales = sumaDeValoresPorcentuales + unGeneradorDeJugada.frecuenciaDeUso().valorPorcentual()
 			if unNumeroAleatorio <= sumaDeValoresPorcentuales
 				return unGeneradorDeJugada
-			end			
+			end
 		end
 	end
 

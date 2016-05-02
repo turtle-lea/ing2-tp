@@ -8,6 +8,8 @@ load 'frecuenciaDeUso.rb'
 load 'jugadaOfensiva3PuntosKPases.rb'
 load 'generadorDeJugadaOfensiva3PuntosKPases.rb'
 load 'generadorDeNumerosAleatorios.rb'
+load 'partido.rb'
+load 'turno.rb'
 
 ### posiciones de los jugadores ###
 load 'posiciones/posicion_base.rb'
