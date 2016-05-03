@@ -28,20 +28,7 @@ class Jugador
   def tiroDeTuPosicion(unaJugadaDefensiva)
     posicion.tiroDeTuPosicion(unaJugadaDefensiva)  
   end
-
-  def pasarLaPelota(otroJugador)
-    p = Pase.new(self, otroJugador)
-    p.intentar()
-  end
-
-  def interceptarPase(unPase)
-    unPase.intercepcionFallida()
-  end
-
-  def recibirPelota()
-    puts "Soy #{@nombre} y recibi la pelota"
-  end
-
+  
   def estadisticas
     @estadisticas
   end
