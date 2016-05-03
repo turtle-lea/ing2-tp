@@ -17,7 +17,7 @@ class LibroDeJugadas
 
 	def obtenerGeneradorDeJugada(unArregloDeGeneradores)
 		unGeneradorDeNumerosAleatorios = GeneradorDeNumerosAleatorios.new(0,100)
-		unNumeroAleatorio = unGeneradorDeNumerosAleatorios.generar()
+		unNumeroAleatorio = unGeneradorDeNumerosAleatorios.generarUnReal()
 		sumaDeValoresPorcentuales = 0
 		unArregloDeGeneradores.each do
 			|unGeneradorDeJugada|

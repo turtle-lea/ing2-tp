@@ -10,5 +10,9 @@ class PosicionAlaPivot
     unaJugadaDefensiva.defenderTiroDeAlaPivot()
   end
 
+  def tiradorPor3Puntos?
+    false
+  end
+
 end
 

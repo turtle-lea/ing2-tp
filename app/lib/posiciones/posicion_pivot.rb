@@ -9,5 +9,9 @@ class PosicionPivot
   def tiroDeTuPosicion(unaJugadaDefensiva)
     unaJugadaDefensiva.defenderTiroDePivot()
   end
+
+  def tiradorPor3Puntos?
+    false
+  end
 end
 

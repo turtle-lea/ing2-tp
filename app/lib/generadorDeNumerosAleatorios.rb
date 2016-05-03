@@ -5,7 +5,11 @@ class GeneradorDeNumerosAleatorios
 		@max = unNumeroMaximo
 	end
 
-	def generar()
-		@generador.rand(@min..@max)
+	def generarUnReal()
+		@generador.rand(@min.to_f...@max.to_f)
 	end
+
+  def generarUnEntero()
+    @generador.rand(@min.round...@max.round)
+
 end

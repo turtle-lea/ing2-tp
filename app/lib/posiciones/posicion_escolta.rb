@@ -10,5 +10,8 @@ class PosicionEscolta
     unaJugadaDefensiva.defenderTiroDeEscolta()
   end
 
+  def tiradorPor3Puntos?
+    true
+  end
 end
 

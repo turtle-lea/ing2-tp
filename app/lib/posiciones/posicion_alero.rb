@@ -10,5 +10,8 @@ class PosicionAlero
     unaJugadaDefensiva.defenderTiroDeAlero()
   end
 
+  def tiradorPor3Puntos?
+    true
+  end
 end
 
