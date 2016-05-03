@@ -1,7 +1,8 @@
 class Jugador
-  def initialize(nombre, unaPosicion)
+  def initialize(nombre, unaPosicion, estadisticas)
     @nombre = nombre
     @posicion = unaPosicion
+    @estadisticas = estadisticas
   end
 
   def equipo
@@ -47,4 +48,7 @@ class Jugador
     @adapterJugadaDefensiva.darDetallesAJugadaDefensiva(unaJugadaDefensiva)
   end
 
+  def estadisticas
+    @estadisticas
+  end
 end

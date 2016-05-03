@@ -1,23 +1,13 @@
-class ResolvedorDeTiroPorDosPuntos < ResolvedorDeAccion
+class ResolvedorDeTiroPorDosPuntos
   def initialize()
   end
 
-  def resolver(unTiro, unaJugada)
-  	fg = unPase.estadisticas.jugador_origen.fg
-  	ppg = unPase.estadisticas.jugador_origen.ppg
-  	apg = unPase.estadisticas.jugador_origen.apg
-  	cantPasesEnJugada = unaJugada.cantPases
-
-  	termino1 = fg
-  	termino2 = ppg * 0.01
-  	termino3 = apg * 0.025 * cantPasesEnJugada
-
-  	if (termino3 > 0.3){
-  		termino3 = 0.3
-  	}
-
-    umbral = termino1 + termino2 + termino4
-    resolver(umbral)
+  def resolver(unJugador)
+  	fgp = unJugador.estadisticas.fieldGoalPercentage
+  	ppg = unJugador.estadisticas.pointsPerGame
+    umbral = fgp + ppg * 0.01
+    rand = rand(0.0..1.0)
+    rand <= umbral
   end
 end
 

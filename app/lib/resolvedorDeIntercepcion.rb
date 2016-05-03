@@ -1,11 +1,12 @@
-class ResolvedorDeIntercepcion < ResolvedorDeAccion
+class ResolvedorDeIntercepcion
   def initialize()
   end
 
-  def resolver(unaIntercepcion, unaJugada)
-    spg = unaIntercepcion.jugador_origen.estadisticas.spg
+  def resolver(unJugador)
+    spg = unJugador.estadisticas.stealsPerGame
     umbral = spg * 0.2
-    resolver(umbral)
+    rand = rand(0.0..1.0)
+    rand <= umbral
   end
 
 end
