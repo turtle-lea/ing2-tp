@@ -8,7 +8,8 @@ class Pase
   end
 
   def ejecutar_contra(acciones_defensivas, turno)
-    esPaseExitoso = @resolvedor_de_pase.verificarExitoDePase(self)
+    esPaseExitoso = @resolvedor_de_pase.verificarExitoDePase(self.jugador_origen)
+    turno.logger.notificarIntentoPase(self)
     esDefensaExitosa = @acciones_defensivas.each do |accion_def|
       if accion_def.esExitoso
         @defensa_exitosa = accion_def
@@ -21,10 +22,12 @@ class Pase
       # dentro del ejecutar de la defensa iria:
       # turno.cambiaPosesion(equipo_defensor, equipo_atacante)
     elsif esPaseExitoso
+      turno.logger.notificarPaseExitoso(self)
       @jugador_origen.pasarLaPelota(@jugador_destino)
       turno.proxima_accion
     else
       # @jugador_origen.tirarPelotaAfuera()
+      turno.logger.notificarPaseFallido(self)
       turno.pelota_afuera
     end
   end

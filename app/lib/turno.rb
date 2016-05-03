@@ -1,7 +1,8 @@
 class Turno
-  def initialize(equipo_sacador, equipo_no_sacador)
+  def initialize(equipo_sacador, equipo_no_sacador, logger)
     @equipo_sacador = equipo_sacador
     @equipo_no_sacador = equipo_no_sacador
+    @logger = logger
   end
 
   def equipo_sacador
@@ -51,5 +52,9 @@ class Turno
   def reboteo
     # Estoy asumiento esta interfaz de Reboteo
     Reboteo.new(@equipo_ofensivo, @equipo_defensivo).ejecutar(self)
+  end
+
+  def logger
+    @logger
   end
 end
