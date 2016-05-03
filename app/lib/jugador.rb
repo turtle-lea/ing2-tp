@@ -1,5 +1,5 @@
 class Jugador
-  def initialize(nombre, unaPosicion, estadisticas)
+  def initialize(nombre, unaPosicion, estadisticas = Estadistica.new(0,0,0,0,0,0,0,0))
     @nombre = nombre
     @posicion = unaPosicion
     @estadisticas = estadisticas

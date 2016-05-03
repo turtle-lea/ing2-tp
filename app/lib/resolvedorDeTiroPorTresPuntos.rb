@@ -3,8 +3,8 @@ class ResolvedorDeTiroPorTresPuntos
   end
 
   def resolver(unJugador)
-  	tpp = unJugador.estadisticas.jugador.estadisticas.threePointPercentage
-  	ppg = jugador.estadisticas.pointsPerGame
+  	tpp = unJugador.estadisticas.threePointPercentage
+  	ppg = unJugador.estadisticas.pointsPerGame
     umbral = tpp + ppg / 2 * 0.01
     rand = rand(0.0..1.0)
     rand <= umbral

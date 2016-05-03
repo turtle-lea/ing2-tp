@@ -18,6 +18,6 @@ describe ResolvedorDeIntercepcion do
     posicion_base = PosicionBase.new
     jugador = Jugador.new("Manu", posicion_base, estadisticas)
     resolvedor = ResolvedorDeIntercepcion.new()
-    expect(resolvedor.resolver(jugador)).to be true
+    expect(resolvedor.resolver(jugador)).to be false
   end
 end
