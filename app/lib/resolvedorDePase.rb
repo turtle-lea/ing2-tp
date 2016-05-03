@@ -1,3 +1,5 @@
+require 'resolvedorDeAccion'
+
 class ResolvedorDePase < ResolvedorDeAccion
   def initialize()
   end
