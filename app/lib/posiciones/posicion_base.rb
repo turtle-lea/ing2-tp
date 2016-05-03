@@ -2,7 +2,12 @@ class PosicionBase
   def initialize
   end
 
-  def informarlePosicionA(unaJugadaDefensiva)
-    unaJugadaDefensiva.base
+  def paseDeTuPosicion(unaJugadaDefensiva)
+    unaJugadaDefensiva.defenderPaseDeBase()
   end
+
+  def tiroDeTuPosicion(unaJugadaDefensiva)
+    unaJugadaDefensiva.defenderTiroDeBase()
+  end
+
 end

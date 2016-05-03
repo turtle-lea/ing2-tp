@@ -19,7 +19,7 @@ def equipo_los_pumas(un_tecnico = Tecnico.new)
     pivot_matias = Jugador.new("Matias", posicion_pivot)
     escolta_nicolas = Jugador.new("Nicolas", posicion_pivot)
 
-    los_pumas = Equipo.new("Los Pumas", base_martin, escolta_nicolas, alero_leandro, ala_pivot_gaston, pivot_matias, un_tecnico)
+    los_pumas = Equipo.new("Los Pumas", base_martin, escolta_nicolas, alero_leandro, pivot_matias, ala_pivot_gaston, un_tecnico)
     los_pumas
 end
 
@@ -36,7 +36,7 @@ def equipo_warriors(un_tecnico = Tecnico.new)
     bogut = Jugador.new("Bogut", posicion_pivot)
     thompson = Jugador.new("Thompson", posicion_escolta)
 
-    los_warrios = Equipo.new("Warriors", curry, thompson, barnes, green, bogut, un_tecnico)
+    los_warrios = Equipo.new("Warriors", curry, thompson, barnes, bogut, green, un_tecnico)
     los_warrios
 end
 

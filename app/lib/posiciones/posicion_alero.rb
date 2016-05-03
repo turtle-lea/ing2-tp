@@ -2,8 +2,12 @@ class PosicionAlero
   def initialize
   end
 
-  def informarlePosicionA(unaJugadaDefensiva)
-    unaJugadaDefensiva.alero
+  def paseDeTuPosicion(unaJugadaDefensiva)
+    unaJugadaDefensiva.defenderPaseDeAlero()
+  end
+
+  def tiroDeTuPosicion(unaJugadaDefensiva)
+    unaJugadaDefensiva.defenderTiroDeAlero()
   end
 
 end

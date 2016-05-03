@@ -26,6 +26,10 @@ class Pase
     @movimientoDefensivo = unMovimientoDefensivo
   end
 
+  def informarTipoDeMovimiento(unaJugadaDefensiva)
+    unaJugadaDefensiva.defenderPase(self)
+  end 
+
   def jugador_origen
     @jugador_origen
   end

@@ -2,9 +2,12 @@ class PosicionPivot
   def initialize
   end
 
-  def informarlePosicionA(unaJugadaDefensiva)
-    unaJugadaDefensiva.pivot
+  def paseDeTuPosicion(unaJugadaDefensiva)
+    unaJugadaDefensiva.defenderPaseDePivot()
   end
 
+  def tiroDeTuPosicion(unaJugadaDefensiva)
+    unaJugadaDefensiva.defenderTiroDePivot()
+  end
 end
 

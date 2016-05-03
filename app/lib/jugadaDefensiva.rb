@@ -1,26 +1,22 @@
-require 'jugadaDefensiva'
-require 'intercepcion'
-
-class JugadaDefensivaHombreAHombre < JugadaDefensiva
+class JugadaDefensiva
   def initialize(equipo_defensivo)
-    # @miEquipo = equipo_defensivo
-    super
+    @miEquipo = equipo_defensivo
   end
 
-  def defender(unMovimientoOfensivo)
-    super
-  end 
+  def defender(unaAccionOfensiva)
+    unaAccionOfensiva.informarTipoDeMovimiento(self) 
+  end
 
   def defenderPase(unPase)
-    unPase.jugador_origen.paseDeTuPosicion(self)
+    []
   end
 
   def defenderTiro(unTiro)
-    unPase.jugador_origen.tiroDeTuPosicion(self)
+    []
   end
 
   def defenderPaseDeBase
-    [Intercepcion.new(@miEquipo.base)]
+    []
   end 
 
   ### TO_DO: IMPLEMENTAR CLASE BLOQUEO
@@ -29,7 +25,7 @@ class JugadaDefensivaHombreAHombre < JugadaDefensiva
   # end 
 
   def defenderPaseDeEscolta
-    [Intercepcion.new(@miEquipo.escolta)]
+    []
   end 
 
   # def defenderTiroDeEscolta()
@@ -37,7 +33,7 @@ class JugadaDefensivaHombreAHombre < JugadaDefensiva
   # end 
 
   def defenderPaseDeAlero
-    [Intercepcion.new(@miEquipo.alero)]
+    []
   end 
 
   # def defenderTiroDeAlero()
@@ -45,7 +41,7 @@ class JugadaDefensivaHombreAHombre < JugadaDefensiva
   # end 
 
   def defenderPaseDePivot
-    [Intercepcion.new(@miEquipo.pivot)]
+    []
   end 
 
   # def defenderTiroDePivot()
@@ -53,7 +49,7 @@ class JugadaDefensivaHombreAHombre < JugadaDefensiva
   # end 
 
   def defenderPaseDeAlaPivot
-    [Intercepcion.new(@miEquipo.alapivot)]
+    []
   end 
 
   # def defenderTiroDeAlaPivot()

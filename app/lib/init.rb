@@ -10,6 +10,8 @@ load 'generadorDeJugadaOfensiva3PuntosKPases.rb'
 load 'generadorDeNumerosAleatorios.rb'
 load 'partido.rb'
 load 'turno.rb'
+load 'resolvedorDePase.rb'
+load 'resolvedorDeAccion.rb'
 
 ### posiciones de los jugadores ###
 load 'posiciones/posicion_base.rb'
