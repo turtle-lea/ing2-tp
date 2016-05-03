@@ -12,22 +12,44 @@ class Turno
     @equipo_no_sacador
   end
 
-  def jugar
-    puts "#{equipo_sacador.nombre} - #{equipo_no_sacador.nombre}"
-    # Aca va la papa, pido jugadas, ejecuto jugadas y defino que hago, algo asi tenia pensado
-    # pero le falta pulir mucho y ver que onda como se integra
+  def comenzar
+    @equipo_ofensivo = @equipo_sacador
+    @equipo_defensivo = @equipo_defensivo
 
-    # jug_of = equipo_sacador.tecnico.elegirJugadaOfensiva
-    # jug_def = equipo_no_sacador.tecnico.elegirJugadaDefensiva
-    #
-    # while true
-      # mov_of = jug_of.proxima_accion
-      # # aca hay que meter double dispatch o algo asi para no caer en el if instace of para ver que
-      # # tipo de movimiento y quien lo hace...
-      # movs_def = jug_def.reacciones_defensivas_a(mov_of)
+    elegir_jugadas
+    proxima_accion
+  end
 
-      # result = mov_of.ejecutar_contra(movs_def)
-      # # dependiendo de ese result decido que hacer, o el jugador/jugada/mov me envia un mensaje que me
-      # # sindica como seguir?
+  def elegir_jugadas
+    @jugada_ofensiva = @equipo_ofensivo.tecnico.elegirJugadaOfensiva
+    @jugada_defensiva = @equipo_defensivo.tecnico.elegirJugadaDefensiva
+  end
+
+  def proxima_accion
+    accion_ofensiva = @jugada_ofensiva.proximoMovimiento
+    acciones_defensivas = @jugada_defensiva.defender(accion_ofensiva)
+
+    accion_ofensiva.ejecutar_contra(acciones_defensivas, self)
+  end
+
+  def pelota_afuera
+    return Resultado.new(@equipo_ofensivo, @equipo_defensivo, 0, 0)
+  end
+
+  def tiro_encestado
+    return Resultado.new(@equipo_ofensivo, @equipo_defensivo, @jugada_ofensiva.puntos, 0)
+  end
+
+  def cambio_de_posesion(equipo_ofensivo, equipo_defensivo)
+    @equipo_ofensivo = equipo_ofensivo
+    @equipo_defensivo = equipo_defensivo
+
+    elegir_jugadas
+    proxima_accion
+  end
+
+  def reboteo
+    # Estoy asumiento esta interfaz de Reboteo
+    Reboteo.new(@equipo_ofensivo, @equipo_defensivo).ejecutar(self)
   end
 end

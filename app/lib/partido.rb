@@ -6,6 +6,7 @@ class Partido
     @equipo1 = equipo1
     @equipo2 = equipo2
     @turnos = []
+    @resultado = Resultado.new(equipo1, equipo2)
   end
 
   def equipo1
@@ -41,17 +42,16 @@ class Partido
       Turno.new(equipo2, equipo1)
     end
     turnos << primer_turno
-    primer_turno.jugar
+    @resultado += primer_turno.comenzar
   end
 
   def crear_y_jugar_turno_nuevo
     turno_nuevo = Turno.new(turnos.last.equipo_no_sacador, turnos.last.equipo_sacador)
     turnos << turno_nuevo
-    turno_nuevo.jugar
+    @resultado += turno_nuevo.comenzar
   end
 
   def partido_empatado?
-    # Nose como vamos a llevar el resultado por ahora
-    false
+    @resultado.empatado?
   end
 end

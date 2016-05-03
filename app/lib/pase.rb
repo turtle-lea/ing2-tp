@@ -5,30 +5,33 @@ class Pase
     @jugador_origen = jugador_origen
     @jugador_destino = jugador_destino
     @resolvedor_de_pase = ResolvedorDePase.new
-    #No es necesario. La jugada ofensiva garantiza una asignación de movimiento antes de la ejecución
-    #@movimientoDefensivo = MovimientoDefensivoNulo.new
   end
 
-  def ejecutar()
+  def ejecutar_contra(acciones_defensivas, turno)
     esPaseExitoso = @resolvedor_de_pase.verificarExitoDePase(self)
-    esDefensaExitosa = @movimientoDefensivo.esExitoso()
+    esDefensaExitosa = @acciones_defensivas.each do |accion_def|
+      if accion_def.esExitoso
+        @defensa_exitosa = accion_def
+        break true
+      end
+    end
 
     if esDefensaExitosa
-      @movimientoDefensivo.ejecutar()
+      @defensa_exitosa.ejecutar(turno)
+      # dentro del ejecutar de la defensa iria:
+      # turno.cambiaPosesion(equipo_defensor, equipo_atacante)
     elsif esPaseExitoso
       @jugador_origen.pasarLaPelota(@jugador_destino)
+      turno.proxima_accion
     else
-      @jugador_origen.tirarPelotaAfuera()
+      # @jugador_origen.tirarPelotaAfuera()
+      turno.pelota_afuera
     end
-  end
-
-  def asignarMovimientoDefensivo(unMovimientoDefensivo)
-    @movimientoDefensivo = unMovimientoDefensivo
   end
 
   def informarTipoDeMovimiento(unaJugadaDefensiva)
     unaJugadaDefensiva.defenderPase(self)
-  end 
+  end
 
   def jugador_origen
     @jugador_origen
