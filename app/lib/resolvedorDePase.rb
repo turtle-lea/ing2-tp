@@ -1,13 +1,12 @@
-require 'resolvedorDeAccion'
-
-class ResolvedorDePase < ResolvedorDeAccion
+class ResolvedorDePase
   def initialize()
   end
 
-  def resolver(unPase, unaJugada)
-  	to = unPase.jugador_origen.estadisticas.to
+  def resolver(unJugador)
+  	to = unJugador.estadisticas.turnOvers
   	umbral = 1 - to * 0.1
-  	resolver(umbral)
+  	rand = rand(0.0..1.0)
+    rand <= umbral
   end
 
 end
