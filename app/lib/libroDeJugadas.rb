@@ -5,6 +5,7 @@ require 'cantidadDePases'
 require 'frecuenciaDeUso'
 require 'tecnico'
 require 'generadorDeNumerosAleatorios'
+require 'validadorDeFrecuenciasDeUso'
 
 class LibroDeJugadas
 	def initialize(unArregloDeGeneradoresDeJugadaOfensiva, unArregloDeGeneradoresDeJugadaDefensiva)
@@ -15,7 +16,7 @@ class LibroDeJugadas
 		@generadoresDeJugadaDefensiva = unArregloDeGeneradoresDeJugadaDefensiva
 	end
 
-	def obtenerGeneradorDeJugada(unArregloDeGeneradores)
+	def obtenerGeneradorDeJugadaSegunFrecuencia(unArregloDeGeneradores)
 		unGeneradorDeNumerosAleatorios = GeneradorDeNumerosAleatorios.new(0,100)
 		unNumeroAleatorio = unGeneradorDeNumerosAleatorios.generarUnReal()
 		sumaDeValoresPorcentuales = 0
@@ -36,15 +37,8 @@ class LibroDeJugadas
     self.obtenerGeneradorDeJugada(@generadoresDeJugadaDefensiva)
   end
 
-	def validarConsistenciaDeFrecuencias(unArregloDeGeneradoresDeJugada)
-		sumaDeValoresPorcentuales = 0
-		unArregloDeGeneradoresDeJugada.each  do
-			|unGeneradorDeJugada|
-			sumaDeValoresPorcentuales = sumaDeValoresPorcentuales + unGeneradorDeJugada.frecuenciaDeUso().valorPorcentual()
-		end
-
-		if sumaDeValoresPorcentuales != 100
-			raise "Las frecuencias de uso del libro de jugadas no suman 100."
-		end
+	def validarConsistenciaDeFrecuencias(unArregloDeGeneradoresDeJugadaConFrecuencias)
+		unArregloDeFrecuencias = unArregloDeGeneradoresDeJugadaConFrecuencias.collect { |unGeneradorConFrecuencia| unGeneradorConFrecuencia.frecuenciaDeUso }
+		ValidadorDeFrecuenciasDeUso.new.validarColeccionDeFrecuenciasEsCompleta(unArregloDeFrecuencias)
 	end
 end
