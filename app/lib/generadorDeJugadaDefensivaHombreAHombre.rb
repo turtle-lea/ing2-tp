@@ -5,9 +5,8 @@ class GeneradorDeJugadaDefensivaHombreAHombre
     @frecuenciaDeUso = unaFrecuenciaDeUso
 	end
 
-	def generarJugada(unEquipo, unaJugadaOfensivaRival)
+	def generarJugada(unEquipo)
 		jugada_hombre_a_hombre = JugadaDefensivaHombreAHombre.new(unEquipo)
-    unaJugadaOfensivaRival.colaborarConJugadaDefensiva(jugada_hombre_a_hombre)
     jugada_hombre_a_hombre
 	end
 
