@@ -14,5 +14,9 @@ class PosicionAlaPivot
     false
   end
 
+  def tiroPor3PuntosDeTuPosicion(unaJugadaDefensiva)
+    unaJugadaDefensiva.defenderTiroPor3PuntosDeAlaPivot
+  end
+
 end
 

@@ -1,5 +1,3 @@
-#load 'resolvedorDeTiroPorDosPuntos.rb'
-
 class TiroPorDosPuntos
   def initialize(unJugador)
     @jugador = unJugador
@@ -7,12 +5,14 @@ class TiroPorDosPuntos
   end
 
   def ejecutar_contra(acciones_defensivas, turno)
-    esTiroExitoso = @resolvedor_de_tiro_por_dos_puntos.resolver(self.jugador_origen)
+    esTiroExitoso = @resolvedor_de_tiro_por_dos_puntos.resolver(self.jugador)
     turno.logger.notificarIntentoTiroDosPuntos(self)
-    esDefensaExitosa = @acciones_defensivas.each do |accion_def|
+    esDefensaExitosa = false
+    acciones_defensivas.each do |accion_def|
       if accion_def.esExitoso
         @defensa_exitosa = accion_def
-        break true
+        acciones_defensivas = true
+        break
       end
     end
 
@@ -26,7 +26,7 @@ class TiroPorDosPuntos
     else
       # @jugador_origen.tirarPelotaAfuera()
       turno.logger.notificarTiroDosPuntosFallido(self)
-      turno.pelota_afuera
+      turno.reboteo
     end
   end
 

@@ -1,5 +1,3 @@
-#load 'resolvedorDePase.rb'
-
 class Pase
   def initialize(jugador_origen, jugador_destino)
     @jugador_origen = jugador_origen
@@ -10,10 +8,12 @@ class Pase
   def ejecutar_contra(acciones_defensivas, turno)
     esPaseExitoso = @resolvedor_de_pase.resolver(self.jugador_origen)
     turno.logger.notificarIntentoPase(self)
-    esDefensaExitosa = @acciones_defensivas.each do |accion_def|
+    esDefensaExitosa = false
+    acciones_defensivas.each do |accion_def|
       if accion_def.esExitoso
         @defensa_exitosa = accion_def
-        break true
+        esDefensaExitosa = true
+        break
       end
     end
 
@@ -23,7 +23,6 @@ class Pase
       # turno.cambiaPosesion(equipo_defensor, equipo_atacante)
     elsif esPaseExitoso
       turno.logger.notificarPaseExitoso(self)
-      @jugador_origen.pasarLaPelota(@jugador_destino)
       turno.proxima_accion
     else
       # @jugador_origen.tirarPelotaAfuera()
@@ -38,6 +37,10 @@ class Pase
 
   def jugador_origen
     @jugador_origen
+  end
+
+  def jugador_destino
+    @jugador_destino
   end
 end
 

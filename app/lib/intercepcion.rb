@@ -5,14 +5,13 @@ class Intercepcion
   end
 
   def ejecutar(unTurno)
-  	unTurno.logger.notificarIntercepcionExitosa(self.jugador)
-	unTurno.cambio_de_posesion(self.jugador.equipo, self.jugador.equipo.oponente)
+    unTurno.logger.notificarIntercepcionExitosa(self)
+    unTurno.cambio_de_posesion(self.jugador.equipo, self.jugador.equipo.oponente)
   end
 
   def esExitoso
-  	@resolvedor_de_intercepcion.resolver(self.jugador)
+    @resolvedor_de_intercepcion.resolver(self.jugador)
   end
-
 
   def jugador
     @jugador

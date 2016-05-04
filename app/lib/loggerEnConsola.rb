@@ -73,7 +73,16 @@ class LoggerEnConsola
   end
 
   def notificarFinalizacionDePartido(unPartido)
-    puts "Finaliza el partido entre #{unPartido.equipo1.nombre} y #{unPartido.equipo2.nombre}. Resultado: #{partido.equipo1.nombre} #{partido.resultado.resultado_de(unPartido.equipo1)} - #{partido.equipo2.nombre} #{partido.resultado.resultado_de(unPartido.equipo2)}"
+    equipo1 = unPartido.equipo1
+    equipo2 = unPartido.equipo2
+    resultado_equipo_1 = unPartido.resultado.puntaje_de(equipo1)
+    resultado_equipo_2 = unPartido.resultado.puntaje_de(equipo2)
+    puts "Finaliza el partido entre #{equipo1.nombre} y #{equipo2.nombre}. Resultado: #{equipo1.nombre} #{resultado_equipo_1} - #{equipo2.nombre} #{resultado_equipo_2}"
+    if resultado_equipo_1 > resultado_equipo_2
+      puts "Ganador: #{equipo1.nombre}"
+    else
+      puts "Ganador: #{equipo2.nombre}"
+    end
   end
 
   def notificarProrroga()

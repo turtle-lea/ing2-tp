@@ -13,4 +13,8 @@ class PosicionBase
   def tiradorPor3Puntos?
     true
   end
+
+  def tiroPor3PuntosDeTuPosicion(unaJugadaDefensiva)
+    unaJugadaDefensiva.defenderTiroPor3PuntosDeBase
+  end
 end

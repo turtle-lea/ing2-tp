@@ -12,25 +12,25 @@ class JugadaOfensiva3PuntosKPases
 
   def proximoMovimiento()
  	  # tuvo exito el pase anterior
-    @portadorDelBalon = @proximoPortador
+    portadorDelBalon = @proximoPortador
 
-    if @cantidadDePasesRestantes.valor() > 1
-      otroJugador = self.jugadorAlAzarQueNoSea(@portadorDelBalon)
-      unMovimientoOfensivo = self.armarUnPaseEntre(unJugador, otroJugador)
+    if @cantidadDePasesRestantes.valor > 1
+      otroJugador = self.jugadorAlAzarQueNoSea(portadorDelBalon)
+      unMovimientoOfensivo = armarUnPaseEntre(portadorDelBalon, otroJugador)
       @proximoPortador = otroJugador
     end
 
-    if @cantidadDePasesRestantes.valor() == 1
+    if @cantidadDePasesRestantes.valor == 1
       otroJugador = self.tiradorAlAzarQueNoSea(@portadorDelBalon)
-      unMovimientoOfensivo = self.armarUnPaseEntre(@portadorDelBalon, otroJugador)
+      unMovimientoOfensivo = armarUnPaseEntre(@portadorDelBalon, otroJugador)
       @proximoPortador = otroJugador
     end
 
-    if @cantidadDePasesRestantes.valor() == 0
-      unMovimientoOfensivo = self.armarUnTiroAlAro(@portadorDelBalon)
+    if @cantidadDePasesRestantes.valor == 0
+      unMovimientoOfensivo = armarUnTiroAlAro(@portadorDelBalon)
     end
 
-    @cantidadDePasesRestantes = Cantidad.new(@cantidadDePasesRestantes.valor() - 1)
+    @cantidadDePasesRestantes = CantidadDePases.new(@cantidadDePasesRestantes.valor - 1)
     unMovimientoOfensivo
   end
 
@@ -54,16 +54,10 @@ class JugadaOfensiva3PuntosKPases
   end
 
   def armarUnPaseEntre(unJugador, otroJugador)
-    unPase = Pase.new(unJugador, otroJugador)
-    unMovimientoDefensivo = @jugadaDefensiva.defender(unPase)
-    unPase.asignarMovimientoDefensivo(unMovimientoDefensivo)
-    unPase
+    Pase.new(unJugador, otroJugador)
   end
 
   def armarUnTiroAlAro(unJugador)
-    unTiro = Tiro.new(unJugador)
-    unMovimientoDefensivo = @jugadaDefensiva.defender(unTiro)
-    unTiro.asignarMovimientoDefensivo(unMovimientoDefensivo)
-    unTiro
+    TiroPorTresPuntos.new(unJugador)
   end
 end

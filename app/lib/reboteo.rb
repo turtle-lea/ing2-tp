@@ -1,3 +1,5 @@
+require 'thread'
+
 class Reboteo
   def initialize(un_equipo_atacante, un_equipo_defensor)
     @jugadores = Queue.new
@@ -22,7 +24,7 @@ class Reboteo
       un_jugador = @jugadores.pop
       if un_resolvedor_de_reboteo.resolver(un_jugador)
         unTurno.logger.notificarGanadorReboteo(un_jugador)
-        unTurno.tomar_posesion_de_balon(un_jugador)
+        return unTurno.tomar_posesion_de_balon(un_jugador)
         break
       end
     end
