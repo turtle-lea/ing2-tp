@@ -11,7 +11,11 @@ class JugadaDefensiva
     []
   end
 
-  def defenderTiro(unTiro)
+  def defenderTiroPor2Puntos(unTiroPor2Puntos)
+    []
+  end
+
+  def defenderTiroPor3Puntos(unTiroPor3Puntos)
     []
   end
 
@@ -19,41 +23,60 @@ class JugadaDefensiva
     []
   end 
 
-  ### TO_DO: IMPLEMENTAR CLASE BLOQUEO
-  # def defenderTiroDeBase()
-  #   [Bloqueo.new(@miEquipo.base)]
-  # end 
+  def defenderTiroPor2PuntosDeBase
+    []
+  end 
+
+  def defenderTiroPor3PuntosDeBase
+    []
+  end 
 
   def defenderPaseDeEscolta
     []
   end 
 
-  # def defenderTiroDeEscolta()
-  #   [Bloqueo.new(@miEquipo.escolta)]
-  # end 
+  def defenderTiroPor2PuntosDeEscolta
+    []
+  end 
+
+  def defenderTiroPor3PuntosDeEscolta
+    []
+  end 
 
   def defenderPaseDeAlero
     []
   end 
 
-  # def defenderTiroDeAlero()
-  #   [Bloqueo.new(@miEquipo.alero)]
-  # end 
+  def defenderTiroPor2PuntosDeAlero
+    []
+  end 
+
+  def defenderTiroPor3PuntosDeAlero
+    []
+  end 
 
   def defenderPaseDePivot
     []
   end 
 
-  # def defenderTiroDePivot()
-  #   [Bloqueo.new(@miEquipo.pivot)]
-  # end 
+  def defenderTiroPor2PuntosDePivot
+    []
+  end 
+
+  def defenderTiroPor3PuntosDePivot()
+    []
+  end 
 
   def defenderPaseDeAlaPivot
     []
   end 
 
-  # def defenderTiroDeAlaPivot()
-  #   [Bloqueo.new(@miEquipo.alapivot)]
-  # end 
+  def defenderTiroPor2PuntosDeAlaPivot
+    []
+  end 
+
+  def defenderTiroPor3PuntosDeAlaPivot
+    []
+  end 
 
 end

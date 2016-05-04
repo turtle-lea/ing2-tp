@@ -30,9 +30,9 @@ class TiroPorDosPuntos
     end
   end
 
-  #def informarTipoDeMovimiento(unaJugadaDefensiva)
-  #  unaJugadaDefensiva.defender(self)
-  #end
+  def informarTipoDeMovimiento(unaJugadaDefensiva)
+    unaJugadaDefensiva.defenderTiroPor2Puntos(self)
+  end
 
   def jugador
     @jugador

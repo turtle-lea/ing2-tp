@@ -25,8 +25,12 @@ class Jugador
     posicion.paseDeTuPosicion(unaJugadaDefensiva)  
   end
 
-  def tiroDeTuPosicion(unaJugadaDefensiva)
+  def tiroPor2PuntosDeTuPosicion(unaJugadaDefensiva)
     posicion.tiroDeTuPosicion(unaJugadaDefensiva)  
+  end
+
+  def tiroPor3PuntosDeTuPosicion(unaJugadaDefensiva)
+    posicion.tiroPor3PuntosDeTuPosicion(unaJugadaDefensiva)  
   end
   
   def estadisticas
