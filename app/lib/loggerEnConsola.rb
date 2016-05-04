@@ -97,10 +97,6 @@ class LoggerEnConsola
 
   end
 
-  def notificarFinalizacionDeTurno()
-    
-  end
-
   def notificarInicioDeTurno(numeroDeTurno)
     puts "Empieza el turno #{numeroDeTurno}"
   end
