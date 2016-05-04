@@ -1,13 +1,13 @@
-require 'jugadaOfensiva3PuntosKPases'
+#require 'jugadaOfensiva3PuntosKPases'
 
 class GeneradorDeJugadaDefensivaHombreAHombre
 	def initialize(unaFrecuenciaDeUso)
-    @frecuenciaDeUso = unaFrecuenciaDeUso
+    	@frecuenciaDeUso = unaFrecuenciaDeUso
 	end
 
 	def generarJugada(unEquipo)
 		jugada_hombre_a_hombre = JugadaDefensivaHombreAHombre.new(unEquipo)
-    jugada_hombre_a_hombre
+		jugada_hombre_a_hombre
 	end
 
 	def frecuenciaDeUso()

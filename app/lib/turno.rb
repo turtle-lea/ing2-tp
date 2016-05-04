@@ -15,7 +15,7 @@ class Turno
 
   def comenzar
     @equipo_ofensivo = @equipo_sacador
-    @equipo_defensivo = @equipo_defensivo
+    @equipo_defensivo = @equipo_no_sacador
 
     elegir_jugadas
     proxima_accion
@@ -23,7 +23,7 @@ class Turno
 
   def elegir_jugadas
     @jugada_ofensiva = @equipo_ofensivo.tecnico.elegirJugadaOfensiva
-    @jugada_defensiva = @equipo_defensivo.tecnico.elegirJugadaDefensiva
+    @jugada_defensiva = @equipo_defensivo.tecnico.elegirJugadaDefensiva(@jugada_ofensiva)
   end
 
   def proxima_accion

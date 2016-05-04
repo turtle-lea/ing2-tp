@@ -1,96 +1,96 @@
 class LoggerEnConsola
 
-	def notificarIntentoPase(unPase){
+	def notificarIntentoPase(unPase)
     puts "#{unPase.jugador_origen.nombre} intenta hacer un pase a #{unPase.jugador_destino.nombre}."
-  }
+  end
 
-  def notificarPaseExitoso(unPase){
+  def notificarPaseExitoso(unPase)
     puts "#{unPase.jugador_origen.nombre} se la pasa a #{unPase.jugador_destino.nombre}."
-  }
+  end
 
-  def notificarPaseFallido(unPase){
+  def notificarPaseFallido(unPase)
     puts "#{unPase.jugador_origen.nombre} falla el pase a #{unPase.jugador_destino.nombre}."
-  }
+  end
 
-  def notificarIntentoTiroDosPuntos(unTiro){
+  def notificarIntentoTiroDosPuntos(unTiro)
     puts "#{unTiro.jugador.nombre} intenta tirar al aro por 2 puntos."
-  }
+  end
 
-  def notificarIntentoTiroTresPuntos(unTiro){
+  def notificarIntentoTiroTresPuntos(unTiro)
     puts "#{unTiro.jugador.nombre} intenta tirar al aro por 3 puntos."
-  }
+  end
 
-  def notificarTiroDosPuntosExitoso(unTiro){
+  def notificarTiroDosPuntosExitoso(unTiro)
     puts "#{unTiro.jugador.nombre} encesta por 2 puntos!"
-  }
+  end
 
-  def notificarTiroTresPuntosExitoso(unTiro){
+  def notificarTiroTresPuntosExitoso(unTiro)
     puts "#{unTiro.jugador.nombre} encesta por 3 puntos!"
-  }
+  end
 
-  def notificarTiroTresPuntosFallido(unTiro){
+  def notificarTiroTresPuntosFallido(unTiro)
     puts "#{unTiro.jugador.nombre} fallo el tiro por 3 puntos!"
-  }
+  end
 
-  def notificarTiroDosPuntosFallido(unTiro){
+  def notificarTiroDosPuntosFallido(unTiro)
     puts "#{unTiro.jugador.nombre} fallo el tiro por 2 puntos!"
-  }
+  end
 
-  def notificarIntentoBloqueo(UnBloqueo){
+  def notificarIntentoBloqueo(unBloqueo)
     puts "#{unBloqueo.jugador.nombre} intenta bloquear el balon"
-  }
+  end
 
-  def notificarBloqueoExitoso(unBloqueo){
+  def notificarBloqueoExitoso(unBloqueo)
     puts "#{unBloqueo.jugador.nombre} bloquea el balon"
-  }
+  end
 
-  def notificarBloqueoFallido(unBloqueo){
+  def notificarBloqueoFallido(unBloqueo)
     puts "#{unBloqueo.jugador.nombre} no logra bloquear el balon"
-  }
+  end
 
-  def notificarIntentoIntercepcion(unaIntercepcion){
+  def notificarIntentoIntercepcion(unaIntercepcion)
     puts "#{unaIntercepcion.jugador.nombre} intenta interceptar el balon"
-  }
+  end
 
-  def notificarIntercepcionExitosa(unaIntercepcion){
+  def notificarIntercepcionExitosa(unaIntercepcion)
     puts "#{unaIntercepcion.jugador.nombre} intercepta el balon"
-  }
+  end
 
-  def notificarIntercepcionFallida(unaIntercepcion){
+  def notificarIntercepcionFallida(unaIntercepcion)
     puts "#{unaIntercepcion.jugador.nombre} no logra interceptar el balon"
-  }
+  end
 
-  def notificarReboteo(){
+  def notificarReboteo()
     puts "La pelota queda en el aire y los jugadores saltan a rebotearla"
-  }
+  end
 
-  def notificarGanadorReboteo(unJugador){
+  def notificarGanadorReboteo(unJugador)
     puts "#{unJugador.nombre} gana el balon tras el reboteo"
-  }
+  end
 
-  def notificarComienzoDePartido(unPartido){
+  def notificarComienzoDePartido(unPartido)
     puts "Comienza el partido entre #{unPartido.equipo1.nombre} y #{unPartido.equipo2.nombre}!"
-  }
+  end
 
-  def notificarFinalizacionDePartido(unPartido){
+  def notificarFinalizacionDePartido(unPartido)
     puts "Finaliza el partido entre #{unPartido.equipo1.nombre} y #{unPartido.equipo2.nombre}. Resultado: #{partido.equipo1.nombre} #{partido.resultado.resultado_de(unPartido.equipo1)} - #{partido.equipo2.nombre} #{partido.resultado.resultado_de(unPartido.equipo2)}"
-  }
+  end
 
-  def notificarProrroga() {
+  def notificarProrroga()
     puts "Tras un gran encuentro, los equipos se encuentran empatados. Comienza la prorroga"
-  }
+  end
 
-  def notificarEleccionDeJugadaOfensiva(){
+  def notificarEleccionDeJugadaOfensiva()
 
-  }
+  end
 
-  def notificarEleccionDeJugadaDefensiva(){
+  def notificarEleccionDeJugadaDefensiva()
 
-  }
+  end
 
-  def notificarFinalizacionDeTurno(){
+  def notificarFinalizacionDeTurno()
     
-  }
+  end
 
   
 end

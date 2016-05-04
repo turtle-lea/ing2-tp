@@ -1,5 +1,5 @@
-require 'jugadaDefensiva'
-require 'intercepcion'
+#require 'jugadaDefensiva'
+#require 'intercepcion'
 
 class JugadaDefensivaHombreAHombre < JugadaDefensiva
   def initialize(equipo_defensivo)

@@ -41,9 +41,9 @@ class Partido
 
   def crear_y_jugar_primer_turno
     primer_turno = if GeneradorDeNumerosAleatorios.new(0, 99).generarUnReal() < 50
-      Turno.new(equipo1, equipo2, logger)
+      Turno.new(equipo1, equipo2, @logger)
     else
-      Turno.new(equipo2, equipo1, logger)
+      Turno.new(equipo2, equipo1, @logger)
     end
     turnos << primer_turno
     @resultado += primer_turno.comenzar

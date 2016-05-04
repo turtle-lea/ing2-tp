@@ -9,7 +9,8 @@ class GeneradorDeNumerosAleatorios
 		@generador.rand(@min.to_f...@max.to_f)
 	end
 
-  def generarUnEntero()
-    @generador.rand(@min.round...@max.round)
+  	def generarUnEntero()
+    	@generador.rand(@min.round...@max.round)
+	end
 
 end

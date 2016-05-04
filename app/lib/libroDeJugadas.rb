@@ -1,44 +1,44 @@
-require 'generadorDeJugadaOfensiva3PuntosKPases'
-require 'generadorDeJugadaDefensivaHombreAHombre'
-require 'jugadaDefensivaHombreAHombre'
-require 'cantidadDePases'
-require 'frecuenciaDeUso'
-require 'tecnico'
-require 'generadorDeNumerosAleatorios'
-require 'validadorDeFrecuenciasDeUso'
+#require 'generadorDeJugadaOfensiva3PuntosKPases'
+#require 'generadorDeJugadaDefensivaHombreAHombre'
+#require 'jugadaDefensivaHombreAHombre'
+#require 'cantidadDePases'
+#require 'frecuenciaDeUso'
+#require 'tecnico'
+#require 'generadorDeNumerosAleatorios'
+#require 'validadorDeFrecuenciasDeUso'
 
 class LibroDeJugadas
-	def initialize(unArregloDeGeneradoresDeJugadaOfensiva, unArregloDeGeneradoresDeJugadaDefensiva)
-		self.validarConsistenciaDeFrecuencias(unArregloDeGeneradoresDeJugadaOfensiva)
-		self.validarConsistenciaDeFrecuencias(unArregloDeGeneradoresDeJugadaDefensiva)
+  def initialize(unArregloDeGeneradoresDeJugadaOfensiva, unArregloDeGeneradoresDeJugadaDefensiva)
+      self.validarConsistenciaDeFrecuencias(unArregloDeGeneradoresDeJugadaOfensiva)
+      self.validarConsistenciaDeFrecuencias(unArregloDeGeneradoresDeJugadaDefensiva)
 
-		@generadoresDeJugadaOfensiva = unArregloDeGeneradoresDeJugadaOfensiva
-		@generadoresDeJugadaDefensiva = unArregloDeGeneradoresDeJugadaDefensiva
-	end
+      @generadoresDeJugadaOfensiva = unArregloDeGeneradoresDeJugadaOfensiva
+      @generadoresDeJugadaDefensiva = unArregloDeGeneradoresDeJugadaDefensiva
+  end
 
-	def obtenerGeneradorDeJugadaSegunFrecuencia(unArregloDeGeneradores)
-		unGeneradorDeNumerosAleatorios = GeneradorDeNumerosAleatorios.new(0,100)
-		unNumeroAleatorio = unGeneradorDeNumerosAleatorios.generarUnReal()
-		sumaDeValoresPorcentuales = 0
-		unArregloDeGeneradores.each do
-			|unGeneradorDeJugada|
-			sumaDeValoresPorcentuales = sumaDeValoresPorcentuales + unGeneradorDeJugada.frecuenciaDeUso().valorPorcentual()
-			if unNumeroAleatorio <= sumaDeValoresPorcentuales
-				return unGeneradorDeJugada
-			end
-		end
-	end
+  def obtenerGeneradorDeJugadaSegunFrecuencia(unArregloDeGeneradores)
+      unGeneradorDeNumerosAleatorios = GeneradorDeNumerosAleatorios.new(0,100)
+      unNumeroAleatorio = unGeneradorDeNumerosAleatorios.generarUnReal()
+      sumaDeValoresPorcentuales = 0
+      unArregloDeGeneradores.each do
+          |unGeneradorDeJugada|
+          sumaDeValoresPorcentuales = sumaDeValoresPorcentuales + unGeneradorDeJugada.frecuenciaDeUso().valorPorcentual()
+          if unNumeroAleatorio <= sumaDeValoresPorcentuales
+              return unGeneradorDeJugada
+          end
+      end
+  end
 
   def obtenerGeneradorDeJugadaOfensiva
-    self.obtenerGeneradorDeJugada(@generadoresDeJugadaOfensiva)
+    self.obtenerGeneradorDeJugadaSegunFrecuencia(@generadoresDeJugadaOfensiva)
   end
 
   def obtenerGeneradorDeJugadaDefensiva
-    self.obtenerGeneradorDeJugada(@generadoresDeJugadaDefensiva)
+    self.obtenerGeneradorDeJugadaSegunFrecuencia(@generadoresDeJugadaDefensiva)
   end
 
-	def validarConsistenciaDeFrecuencias(unArregloDeGeneradoresDeJugadaConFrecuencias)
-		unArregloDeFrecuencias = unArregloDeGeneradoresDeJugadaConFrecuencias.collect { |unGeneradorConFrecuencia| unGeneradorConFrecuencia.frecuenciaDeUso }
-		ValidadorDeFrecuenciasDeUso.new.validarColeccionDeFrecuenciasEsCompleta(unArregloDeFrecuencias)
-	end
+  def validarConsistenciaDeFrecuencias(unArregloDeGeneradoresDeJugadaConFrecuencias)
+      unArregloDeFrecuencias = unArregloDeGeneradoresDeJugadaConFrecuencias.collect { |unGeneradorConFrecuencia| unGeneradorConFrecuencia.frecuenciaDeUso }
+      ValidadorDeFrecuenciasDeUso.new.validarColeccionDeFrecuenciasEsCompleta(unArregloDeFrecuencias)
+  end
 end

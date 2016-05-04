@@ -22,7 +22,7 @@ def main()
   libroDeJugadas = LibroDeJugadas.new(
     [GeneradorDeJugadaOfensiva3PuntosKPases.new(CantidadDePases.new(2), FrecuenciaDeUso.new(10)),
      GeneradorDeJugadaOfensiva3PuntosKPases.new(CantidadDePases.new(5), FrecuenciaDeUso.new(90))],
-     []);
+    [GeneradorDeJugadaDefensivaHombreAHombre.new(FrecuenciaDeUso.new(100))]);
 
   tecnico = Tecnico.new(libroDeJugadas);
   tecnico_rival = Tecnico.new(libroDeJugadas);
@@ -30,7 +30,8 @@ def main()
   equipo_rival = Equipo.new("All Blacks", juan1, juan2, juan3, juan4, juan5, tecnico_rival)
   los_pumas = Equipo.new("Los Pumas", base_martin, escolta_esteban, alero_leandro, pivot_matias, ala_gaston, tecnico)
 
-  los_pumas.tecnico.elegirJugadaOfensiva()
+  partido = Partido.new(los_pumas, equipo_rival)
+  partido.jugar
 end
 
 #

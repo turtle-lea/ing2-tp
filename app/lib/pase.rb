@@ -1,4 +1,4 @@
-load 'resolvedorDePase.rb'
+#load 'resolvedorDePase.rb'
 
 class Pase
   def initialize(jugador_origen, jugador_destino)

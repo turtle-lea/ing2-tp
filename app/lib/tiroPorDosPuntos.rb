@@ -1,4 +1,4 @@
-load 'resolvedorDeTiroPorDosPuntos.rb'
+#load 'resolvedorDeTiroPorDosPuntos.rb'
 
 class TiroPorDosPuntos
   def initialize(unJugador)
