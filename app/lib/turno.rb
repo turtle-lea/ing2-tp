@@ -59,7 +59,6 @@ class Turno
   end
 
   def reboteo
-    # Estoy asumiento esta interfaz de Reboteo
     Reboteo.new(@equipo_ofensivo, @equipo_defensivo).ejecutar(self)
   end
 
