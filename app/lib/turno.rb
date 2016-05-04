@@ -49,6 +49,15 @@ class Turno
     proxima_accion
   end
 
+  def tomar_posesion_de_balon(un_jugador)
+    unless @equipo_ofensivo.jugadores.include?(un_jugador)
+      cambio_de_posesion(@equipo_defensivo, @equipo_ofensivo)
+    else
+      elegir_jugadas
+      proxima_accion
+    end
+  end
+
   def reboteo
     # Estoy asumiento esta interfaz de Reboteo
     Reboteo.new(@equipo_ofensivo, @equipo_defensivo).ejecutar(self)
