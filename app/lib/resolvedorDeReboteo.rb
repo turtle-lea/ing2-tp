@@ -5,7 +5,7 @@ class ResolvedorDeReboteo
   def resolver(unJugador)
     rpg = unJugador.estadisticas.reboundsPerGame
     umbral = rpg * 0.05
-    rand = rand(0.0..1.0)
+    rand = GeneradorDeNumerosAleatorios.new(0,1).generarUnReal
     rand <= umbral
   end
 

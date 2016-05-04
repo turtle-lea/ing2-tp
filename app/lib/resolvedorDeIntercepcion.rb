@@ -5,7 +5,7 @@ class ResolvedorDeIntercepcion
   def resolver(unJugador)
     spg = unJugador.estadisticas.stealsPerGame
     umbral = spg * 0.2
-    rand = rand(0.0..1.0)
+    rand = GeneradorDeNumerosAleatorios.new(0,1).generarUnReal
     rand <= umbral
   end
 
