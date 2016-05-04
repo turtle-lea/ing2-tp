@@ -16,10 +16,12 @@ class Reboteo
   end
 
   def ejecutar(unTurno)
+    unTurno.logger.notificarReboteo
     while not @jugadores.empty?
       un_resolvedor_de_reboteo = ResolvedorDeReboteo.new()
       un_jugador = @jugadores.pop
       if un_resolvedor_de_reboteo.resolver(un_jugador)
+        unTurno.logger.notificarGanadorReboteo(un_jugador)
         unTurno.tomar_posesion_de_balon(un_jugador)
         break
       end

@@ -1,4 +1,4 @@
-class Logger
+class LoggerEnConsola
 
 	def notificarIntentoPase(unPase){
     puts "#{unPase.jugador_origen.nombre} intenta hacer un pase a #{unPase.jugador_destino.nombre}."
@@ -37,27 +37,27 @@ class Logger
   }
 
   def notificarIntentoBloqueo(UnBloqueo){
-    puts "#{unBloqueo.jugador_origen.nombre} intenta bloquear a #{unBloqueo.jugador_destino.nombre}"
+    puts "#{unBloqueo.jugador.nombre} intenta bloquear el balon"
   }
 
   def notificarBloqueoExitoso(unBloqueo){
-    puts "#{unBloqueo.jugador_origen.nombre} bloquea a #{unBloqueo.jugador_destino.nombre}"
+    puts "#{unBloqueo.jugador.nombre} bloquea el balon"
   }
 
   def notificarBloqueoFallido(unBloqueo){
-    puts "#{unBloqueo.jugador_origen.nombre} no logra bloquear a #{unBloqueo.jugador_destino.nombre}"
+    puts "#{unBloqueo.jugador.nombre} no logra bloquear el balon"
   }
 
   def notificarIntentoIntercepcion(unaIntercepcion){
-    puts "#{unaIntercepcion.jugador_origen.nombre} intenta interceptar a #{unaIntercepcion.jugador_destino.nombre}"
+    puts "#{unaIntercepcion.jugador.nombre} intenta interceptar el balon"
   }
 
   def notificarIntercepcionExitosa(unaIntercepcion){
-    puts "#{unaIntercepcion.jugador_origen.nombre} intercepta a #{unaIntercepcion.jugador_destino.nombre}"
+    puts "#{unaIntercepcion.jugador.nombre} intercepta el balon"
   }
 
   def notificarIntercepcionFallida(unaIntercepcion){
-    puts "#{unaIntercepcion.jugador_origen.nombre} no logra interceptar a #{unaIntercepcion.jugador_destino.nombre}"
+    puts "#{unaIntercepcion.jugador.nombre} no logra interceptar el balon"
   }
 
   def notificarReboteo(){

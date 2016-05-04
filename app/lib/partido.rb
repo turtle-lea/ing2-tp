@@ -7,7 +7,7 @@ class Partido
     @equipo2 = equipo2
     @turnos = []
     @resultado = Resultado.new(equipo1, equipo2)
-    @logger = Logger.new()
+    @logger = LoggerEnConsola.new()
   end
 
   def equipo1
