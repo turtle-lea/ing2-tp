@@ -37,8 +37,8 @@ class Turno
     return Resultado.new(@equipo_ofensivo, @equipo_defensivo, 0, 0)
   end
 
-  def tiro_encestado
-    return Resultado.new(@equipo_ofensivo, @equipo_defensivo, @jugada_ofensiva.puntos, 0)
+  def tiro_encestado(puntos)
+    return Resultado.new(@equipo_ofensivo, @equipo_defensivo, puntos, 0)
   end
 
   def cambio_de_posesion(equipo_ofensivo, equipo_defensivo)
