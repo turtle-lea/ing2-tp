@@ -11,6 +11,8 @@ class Reboteo
     @jugadores.push(un_equipo_atacante.escolta)
     @jugadores.push(un_equipo_defensor.base)
     @jugadores.push(un_equipo_atacante.base)
+
+    @equipos = [un_equipo_atacante, un_equipo_defensor];
   end
 
   def ejecutar(unTurno)
@@ -18,13 +20,13 @@ class Reboteo
       un_resolvedor_de_reboteo = ResolvedorDeReboteo.new()
       un_jugador = @jugadores.pop
       if un_resolvedor_de_reboteo.resolver(un_jugador)
-        unTurno.ganarLaPelota(un_jugador)
+        unTurno.tomar_posesion_de_balon(un_jugador)
         break
       end
     end
 
     if @jugadores.empty?
-      unTurno.pelotaAfuera()
+      unTurno.pelota_afuera
     end
   end
 end
