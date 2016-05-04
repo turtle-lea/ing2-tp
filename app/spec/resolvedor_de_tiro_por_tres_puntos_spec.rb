@@ -1,7 +1,4 @@
-require 'jugador'
-require 'posiciones/posicion_base'
-require 'estadistica'
-require 'resolvedorDeTiroPorTresPuntos'
+load 'lib/init.rb'
 
 describe ResolvedorDeTiroPorTresPuntos do
 

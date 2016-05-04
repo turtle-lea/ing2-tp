@@ -1,7 +1,4 @@
-require 'jugador'
-require 'posiciones/posicion_base'
-require 'estadistica'
-require 'resolvedorDeIntercepcion'
+load 'lib/init.rb'
 
 describe ResolvedorDeIntercepcion do
 

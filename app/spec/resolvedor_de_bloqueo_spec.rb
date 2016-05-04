@@ -1,7 +1,4 @@
-require 'jugador'
-require 'posiciones/posicion_base'
-require 'estadistica'
-require 'resolvedorDeBloqueo'
+load 'lib/init.rb'
 
 describe ResolvedorDeBloqueo do
 

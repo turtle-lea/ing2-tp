@@ -1,8 +1,4 @@
-require 'pase'
-require 'jugadaDefensiva'
-require 'jugadaDefensivaHombreAHombre'
-require 'intercepcion'
-require 'helper'
+load 'lib/init.rb'
 
 describe JugadaDefensiva do
   it "defiende un pase con arreglo vacio" do

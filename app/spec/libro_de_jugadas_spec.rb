@@ -1,7 +1,4 @@
-require 'posiciones/posicion_base'
-require 'libroDeJugadas'
-require 'generadorDeJugadaDefensivaHombreAHombre'
-require 'helper'
+load 'lib/init.rb'
 
 describe LibroDeJugadas do
   it "selecciona una jugada ofensiva del libro de jugadas" do
