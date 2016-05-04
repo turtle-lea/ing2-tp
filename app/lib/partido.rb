@@ -27,7 +27,7 @@ class Partido
     crear_y_jugar_primer_turno
     
     2.upto(CANTIDAD_TURNOS) do |i|
-      crear_y_jugar_turno_nuevo
+      crear_y_jugar_turno_nuevo i
     end
 
     if partido_empatado?
@@ -36,7 +36,7 @@ class Partido
 
     while partido_empatado? do
       CANTIDAD_TURNOS_EXTRA.times do |i|
-        crear_y_jugar_turno_nuevo
+        crear_y_jugar_turno_nuevo(i)
       end
     end
     @logger.notificarFinalizacionDePartido(self)
@@ -52,7 +52,8 @@ class Partido
     @resultado += primer_turno.comenzar
   end
 
-  def crear_y_jugar_turno_nuevo
+  def crear_y_jugar_turno_nuevo(numero_de_turno)
+    @logger.notificarInicioDeTurno(numero_de_turno)
     turno_nuevo = Turno.new(turnos.last.equipo_no_sacador, turnos.last.equipo_sacador, @logger)
     turnos << turno_nuevo
     @resultado += turno_nuevo.comenzar
