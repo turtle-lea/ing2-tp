@@ -1,10 +1,4 @@
-require 'posiciones/posicion_base'
-require 'posiciones/posicion_ala_pivot'
-require 'posiciones/posicion_pivot'
-require 'posiciones/posicion_escolta'
-require 'posiciones/posicion_alero'
-require 'jugador'
-require 'equipo'
+load 'lib/init.rb'
 
 describe Equipo do
   it "un equipo conoce a su base" do

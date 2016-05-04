@@ -1,4 +1,4 @@
-require 'posiciones/posicion_base'
+load 'lib/init.rb'
 
 describe Jugador do
   it "devuelve el equipo correcto" do

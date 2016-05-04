@@ -1,5 +1,3 @@
-#require 'jugadaOfensiva3PuntosKPases'
-
 class GeneradorDeJugadaDefensivaHombreAHombre
 	def initialize(unaFrecuenciaDeUso)
     	@frecuenciaDeUso = unaFrecuenciaDeUso

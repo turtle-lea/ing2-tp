@@ -1,7 +1,4 @@
-require 'helper'
-require 'generadorDeJugadaDefensivaHombreAHombre'
-require 'jugadaDefensivaHombreAHombre'
-require 'generadorDeJugadaOfensiva3PuntosKPases'
+load 'lib/init.rb'
 
 describe GeneradorDeJugadaDefensivaHombreAHombre do
   it "se genera una jugada defensiva hombre a hombre para warriors" do

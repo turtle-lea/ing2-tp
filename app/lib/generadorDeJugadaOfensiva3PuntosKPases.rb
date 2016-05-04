@@ -1,5 +1,3 @@
-#require 'jugadaOfensiva3PuntosKPases'
-
 class GeneradorDeJugadaOfensiva3PuntosKPases
 	def initialize(unaCantidadDePases, unaFrecuenciaDeUso)
 		@cantidadDePases = unaCantidadDePases

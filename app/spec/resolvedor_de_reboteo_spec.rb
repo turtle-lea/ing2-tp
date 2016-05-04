@@ -1,7 +1,4 @@
-require 'jugador'
-require 'posiciones/posicion_base'
-require 'estadistica'
-require 'resolvedorDeReboteo'
+load 'lib/init.rb'
 
 describe ResolvedorDeReboteo do
 

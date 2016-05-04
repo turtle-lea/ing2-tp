@@ -1,10 +1,4 @@
-require 'posiciones/posicion_base'
-require 'posiciones/posicion_ala_pivot'
-require 'posiciones/posicion_pivot'
-require 'posiciones/posicion_escolta'
-require 'posiciones/posicion_alero'
-require 'jugador'
-require 'equipo'
+load 'lib/init.rb'
 
 def equipo_los_pumas(un_tecnico = Tecnico.new)
     posicion_base = PosicionBase.new

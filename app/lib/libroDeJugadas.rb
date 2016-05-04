@@ -1,12 +1,3 @@
-#require 'generadorDeJugadaOfensiva3PuntosKPases'
-#require 'generadorDeJugadaDefensivaHombreAHombre'
-#require 'jugadaDefensivaHombreAHombre'
-#require 'cantidadDePases'
-#require 'frecuenciaDeUso'
-#require 'tecnico'
-#require 'generadorDeNumerosAleatorios'
-#require 'validadorDeFrecuenciasDeUso'
-
 class LibroDeJugadas
   def initialize(unArregloDeGeneradoresDeJugadaOfensiva, unArregloDeGeneradoresDeJugadaDefensiva)
       self.validarConsistenciaDeFrecuencias(unArregloDeGeneradoresDeJugadaOfensiva)
