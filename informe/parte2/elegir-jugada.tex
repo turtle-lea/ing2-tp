@@ -11,6 +11,10 @@ Para eso usamos precisamente un 'GeneradorDeJugadaX' donde X es una jugada tanto
 El generador tiene además como colaborador un objeto de clase 'frecuenciaDeUso', que es utilizado por un objeto generadorDeNumerosAleatorios que determinará 
 de forma random la jugada seleccionada.
 
+Si bien una jugada \emph{defensiva} no tiene el problema de mantener un estado (con lo cual no tiene el problema de tener que resetearse),
+diseñamos la elección de las mismas a través de objetos generadores también porque comparten el hecho de tener una 'frecuenciaDeUso', y para lograr que la elección
+de ambos tipos de jugadas sea análogo.
+
 \begin{figure}[h!]
    \includegraphics[scale=0.45]{imagenes/elegir-jugada-clases.png}
    \caption{Diagrama de clases en donde se muestra el tecnico, su libro de jugadas, los generadores de las distintas jugadas y las clases de las jugadas}
