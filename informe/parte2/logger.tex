@@ -1,0 +1,30 @@
+El log de simulación debe permitir registrar todos los eventos interesantes de la simulación como inicio y fin del partido o de un turno,
+intento de movimiento y su resultado (exitoso o fallido), etc. Los eventos a loggear en principio serán siempre los mismos, pero eventualmente
+podría cambiar la representación del log (un archivo, impresión por consola, un objeto especial, etc). Estas ideas están reflejadas en la
+intención del patrón de diseño \emph{Builder}. En nuestro caso, el builder es el {\tt Logger} y el producto será una impresión por consola, un 
+{\tt Archivo}, etc. El director está distribuído entre los movimientos defensivos y ofensivos, reboteo y turno.
+
+A continuación presentamos el modelado de clases del log de simulación:
+
+\begin{figure}[h!]
+  \includegraphics[scale=0.35]{imagenes/clases-logger.png}
+  \caption{Logger usando el patrón \emph{Builder}}
+\end{figure}
+
+El Turno es el director principal (al enviar el mensaje ``comenzar()'' este se encarga de ejecutar jugadas y movimientos). Adem\'as provee
+el mensaje ``logger()'' para que los movimientos y jugadas puedan enviar mensajes al logger.
+
+El logger se instancia desde el subsistema de desafíos. Cuando a un objeto desafío se le envía el mensaje ``simular()'', se realiza lo siguiente:
+
+
+\begin{algorithmic} 
+	\State ...
+	\State Logger $logger$ = new LoggerEnArchivo()
+	\State Simulador simulador = new SimuladorDeBasket()
+	\State ResultadoDto res = simulador.simular(equipoDto1, equipoDto2, $logger$)
+	\State Archivo logDeSimulacion = $logger$.archivo()
+	\State ...
+\end{algorithmic}
+
+De esta manera obtiene el log final, que dependerá del logger que se haya utilizado.
+
