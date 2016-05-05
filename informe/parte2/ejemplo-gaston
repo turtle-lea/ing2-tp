@@ -1,0 +1,12 @@
+\begin{algorithmic} 
+	\If{$\alpha < 1$} 
+		\State $semilla\_positiva = 1$
+		\State $semilla\_negativa = \alpha$
+	\Else
+		\State $semilla\_positiva = \alpha$
+		\State $semilla\_negativa = 1$
+	\EndIf
+\end{algorithmic}
+
+
+
