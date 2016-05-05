@@ -1,0 +1,25 @@
+Los atrasos fueron causados principalmente por las actividades que los integrantes realizamos además de trabajar en este proyecto. Todos
+nosotros tenemos trabajos de 6hs diarias. Adem\'as uno de los integrantes dedica 10 hs por semana a la docencia y el resto est\'a cursando otra materia
+en la facultad. Haciendo un balance general y teniendo en cuenta horas de descanso, por semana cada uno tuvo disponible aproximadamente 10 horas (sin
+contar los fines de semana). Por último hay que tener en cuenta que la coordinación grupal se complicó por la dificultad de coincidir todos en un mismo
+horario.
+
+En conclusión, las horas netas que cada uno tuvo disponibles fueron muy pocas (en las 3 semanas del sprint, cada uno tuvo aproximadamente unas 30 hs
+disponibles más fines de semana). Además hubo una semana de disponibilidad cero por el parcial, por ende sólo tiene sentido considerar
+dos semanas. Esto explica claramente los saltos en los burndowns.
+
+Para llegar a tiempo a la entrega, en el avance del 20/04 se realizó una reunión grupal para pensar un diseño a nivel global y establecer parámetros
+en común. Luego se repartieron stories iniciales para cada uno (dos por persona) y se avanzó en la parte central del simulador. Cada uno fue tomando
+stories extra a medida que las terminaba o que se veía imposibilitado para avanzar.
+
+Detectamos muchas dependencias entre stories. Esto provocó que en un punto las stories estaban completamente distribuidas pero ninguna había sido
+completada porque se necesitaba integración con stories de otra persona. Es por esto que muchas stories se cerraron en los últimos días, mientras
+que las horas fueron disminuyendo de manera más gradual.
+
+Al unificar las partes, detectamos ciertos problemas a solucionar en un próximo sprint:
+\begin{itemize}
+ \item El logger no es cerrado para la modificación cuando se quieran agregar movimientos (por ejemplo: HacerFalta).
+ \item Los parámetros deben ser modificados desde la clase que los usa. Esto deberíamos abstraerlo en algúna estructura especial que pueda
+ ser modificada sin afectar a los que la usan.
+ \item El jugador estrella (MVP) quedó fuera de esta iteración.
+\end{itemize}
