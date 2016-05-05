@@ -1,0 +1,49 @@
+Las jugadas ofensivas inicializan un colaborador interno portadorDelBalon al ser instanciadas, que representa el jugador que debe arrancar con la pelota.
+Sin embargo, durante la ejecución de un turno pueden suceder eventos relacionados con la recuperacion del balon(intercepción exitosa u obtención de rebote)
+que obliguen a los técnicos a elegir nuevamente una jugada para el mismo turno que sigue corriendo. Al analizar la jugada ofensiva
+elegida no es posible asegurar que el portadorDelBalon inicial se corresponda con el portador del balon en el contexto de la ejecución del turno. 
+
+Resulta más fácil explicar este hecho mirando el siguiente pseudocódigo, analizando por ejemplo los eventos al ocurrir un cambio de posesión:
+
+~
+
+\underline{En la clase \textbf{Turno}}
+
+~
+
+\begin{algorithmic}
+	\Function{cambio\_de\_posesion}{equipo\_ofensivo, equipo\_defensivo}
+	  \State $self.equipo\_ofensivo\gets equipo\_ofensivo$
+	  \State $self.equipo\_defensivo\gets equipo\_defensivo$
+	  \State $elegir\_jugadas$
+	  \State $proxima\_accion$
+	\EndFunction
+\end{algorithmic}
+
+~ 
+
+Una acción que puede notificarle a un turno acerca de un cambio de posesion es por ejemplo una intercepción realizada por un jugador. Supongamos la intercepción del Alero de un equipo.
+
+~
+
+\underline{En la clase \textbf{Intercepcion}}
+
+~
+
+\begin{algorithmic}
+	\Function{ejecutar}{unTurno}
+	  \State \ldots
+	  \State unTurno.cambio\_de\_posesion(self.jugador.equipo, self.jugador.equipo.oponente)
+	  \State \ldots
+	\EndFunction
+\end{algorithmic}
+
+~
+
+En ese contexto, la acción inicial de la jugada elegida puede ser un pase entre el Base y el Escolta del equipo que ha interceptado recientemente la pelota (muchas jugadas
+del basket empiezan con el base como portador inicial), cuando en realidad la intercepción pudo haber sido lograda por el Alero del equipo. Es como si la pelota se teletransportara
+directamente al portadorDelBalon inicial de la jugada seleccionada.
+
+Elegimos esta opción para facilitar la implementación y considerando el hecho de que lo mismo sucede para ambos equipos, por lo que no debería tener grandes repercusiones en la 
+simulación de un desafío.
+

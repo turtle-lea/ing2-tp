@@ -22,9 +22,11 @@ diferentes movimientos ofensivos el mensaje 'ejecutarContra'. Este es el pseudoc
 ~
 
 \begin{algorithmic} 
+	\Function{proxima\_accion}{}
   \State $accionOfensiva\gets jugadaOfensiva.proximoMovimiento$
   \State $accionesDefensiva\gets jugadaDefensiva.defender(accionOfensiva)$
   \State $\wedge \ accionOfensiva.ejecutarContra(accionesDefensivas)$
+	\EndFunction
 \end{algorithmic}
 
  
