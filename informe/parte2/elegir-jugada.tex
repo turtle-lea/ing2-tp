@@ -1,0 +1,39 @@
+\subsection{Eligiendo jugada ofensiva}
+
+Al momento de elegir una jugada ofensiva el técnico la selecciona de su libro de jugadas. El mismo tiene como colaboradores internos dos arreglos de 
+GeneradoresDeJugada: uno para las ofensivas y otro para las defensivas. 
+
+Introducimos una clase 'Generador*' por el siguiente motivo:
+Las jugadas ofensivas tienen como colaborador interno a un jugador que indica quien es el portador actual del balón y opcionalmente otros colaboradores como la
+cantidad de pases realizada hasta el momento. En el caso de que se produzca un reboteo en donde el mismo equipo 
+atacante vuelva a ganar la posesión del balón la jugada debería resetearse. Es decir, volver a un estado inicial. 
+En lugar de hacer eso, preferimos que cada vez que el técnico seleccione una jugada se genere una nueva instancia de la misma.
+Para eso usamos precisamente un 'GeneradorDeJugadaX' donde X es una jugada tanto ofensiva como defensiva.
+
+El generador tiene además como colaborador un objeto de clase 'frecuenciaDeUso', que es utilizado por un objeto generadorDeNumerosAleatorios que determinará 
+de forma random la jugada seleccionada.
+
+\begin{figure}[h!]
+   \includegraphics[scale=0.45]{imagenes/elegir-jugada-clases.png}
+   \caption{Diagrama de clases en donde se muestra el tecnico, su libro de jugadas, los generadores de las distintas jugadas y las clases de las jugadas}
+\end{figure}
+
+En resumen, los generadores son los encargados de generar las nuevas instancias de las jugadas elegidas por los técnicos. A continuación se muestra un diagrama
+de secuencia en donde se muestran las interacciones que entran en juego desde el momento en que se le informa al técnico que debe elegir una jugada ofensiva.
+El número aleatorio obtenido es menor a la frecuencia de uso del generadorDeJugadaOfensivaDe3PuntosKPases. El técnico utiliza dicha jugada el 70\% de las veces,
+por lo que dicho generador es seleccionado
+como jugada seleccionada por el técnico del equipo 'Los Pumas'. Finalmente se le envía el mensaje 'crearJugada' al generador para que devuelva una instancia
+de JugadaOfensivaDe3PuntosKPases.
+
+\newpage
+\begin{landscape}
+
+\begin{figure}[h!]
+   \includegraphics[scale=0.27]{imagenes/elegir-ofensiva.png}
+   \caption{Contexto: El técnico de Los Pumas elige una jugada ofensiva. El generador obtenido es el de JugadaOfensivaDe3PuntosKPases, el cual se utiliza para
+   generar una JugadaOfensivaDe3PuntosKPases}
+\end{figure}
+
+\end{landscape}
+\newpage
+
