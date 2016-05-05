@@ -29,8 +29,8 @@
 
 
 \sprintstory
-{264}
-{Como diseñador del juego quiero que el juego tenga jugadas ofensivas y defensivas para asociar al libro de jugadas de los técnicos.}
+{264: Creación de jugadas}
+{Como diseñador del simulador quiero que la simulación tenga jugadas ofensivas y defensivas para asociar al libro de jugadas de los técnicos.}
 {5 pt.}
 {Must Have}
 {Consiste en crear dos jugadas, una ofensiva y otra defensiva:
@@ -76,8 +76,8 @@ defensiva específica por parte del equipo defensivo.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{252}
-{Como diseñador del juego quiero que el equipo que posea la pelota en el primer turno de cada partido sea elegido al azar para para que el juego sea ecuánime en cuanto al comienzo del juego.}
+{252: Simulador primer turno}
+{Como diseñador del simulador quiero que el equipo que posea la pelota en el primer turno de cada partido sea elegido al azar para para que el juego sea ecuánime en cuanto al comienzo del juego.}
 {1 pt.}
 {Must Have}
 {Especifica qué equipo empezará con la pelota en el primer turno de un desafío.}
@@ -100,12 +100,12 @@ defensiva específica por parte del equipo defensivo.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{251}
-{Como diseñador del juego quiero que el juego este dividido en 40 turnos para discretizar y acotar la duración de la simulación.}
+{251: Simulador - División en turnos}
+{Como diseñador del simulador quiero que la simulación esté dividido en 40 turnos para discretizar y acotar la duración de la simulación.}
 {1 pt.}
 {Must Have}
 {-}
-{Realizar una simulación. Si el juego no termina en empate entonces la suma entre las jugadas que terminaron con el balón fuera de la cancha y las jugadas en donde se encestó debería totalizar 40.}
+{Realizar una simulación. Si la simulación no termina en empate entonces la suma entre las jugadas que terminaron con el balón fuera de la cancha y las jugadas en donde se encestó debería totalizar 40.}
 
 \begin{taskstable}
  \task
@@ -124,8 +124,8 @@ defensiva específica por parte del equipo defensivo.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{253}
-{Como diseñador del juego quiero que los equipos comiencen con la posesión inicial de la pelota de forma alternada para que el juego sea ecuánime en las oportunidades de victoria de cada equipo.}
+{253: Posesión inicial en cada turno}
+{Como diseñador del simulador quiero que los equipos comiencen con la posesión inicial de la pelota de forma alternada para que la simulación sea ecuánime en las oportunidades de victoria de cada equipo.}
 {1 pt.}
 {Must Have}
 {Si el equipo A sacó en el primer turno, el equipo B sacará en el segundo, el A en el tercero y así sucesivamente.}
@@ -148,8 +148,8 @@ defensiva específica por parte del equipo defensivo.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{254}
-{Como diseñador del juego quiero que las acciones de los jugadores tengan éxito en función de las fórmulas para que los resultados de la simulación sean realistas y se correspondan con las estadísticas de los jugadores.}
+{254: Éxito de acciones - Fórmulas}
+{Como diseñador del simulador quiero que las acciones de los jugadores tengan éxito en función de las fórmulas para que los resultados de la simulación sean realistas y se correspondan con las estadísticas de los jugadores.}
 {5 pt.}
 {Must Have}
 {\begin{itemize}
@@ -182,8 +182,8 @@ defensiva específica por parte del equipo defensivo.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{257}
-{Como diseñador del juego quiero que solo los jugadores ofensivos pueden pasar la pelota, tirar de 2 puntos o tirar de 3 puntos para intentar sumar puntos o aumentar las probabilidades de anotar.}
+{257: Simulador - Acciones de jugadores ofensivos}
+{Como diseñador del simulador quiero que solo los jugadores ofensivos pueden pasar la pelota, tirar de 2 puntos o tirar de 3 puntos para intentar sumar puntos o aumentar las probabilidades de anotar.}
 {2 pt.}
 {Must Have}
 {Se definen las acciones que sólo pueden realizar los jugadores del equipo ofensivo (los jugadores defensivos no pueden realizarlas). En el caso
@@ -208,8 +208,8 @@ Las reglas de los tiros y los pases se explicitan en otras stories (\#248 y \#24
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{258}
-{Como diseñador del juego quiero que solo los jugadores defensivos puedan bloquear un tiro o interceptar un pase para intentar contrarrestar la acción del rival.}
+{258: Simulador - Acciones de jugadores defensivos}
+{Como diseñador del simulador quiero que solo los jugadores defensivos puedan bloquear un tiro o interceptar un pase para intentar contrarrestar la acción del rival.}
 {2 pt.}
 {Must Have}
 {Es análoga a la story \#257 para los jugadores defensivos. Bloqueos e intercepciones se especifican en las stories \#248 y \#249.}
@@ -232,8 +232,8 @@ Las reglas de los tiros y los pases se explicitan en otras stories (\#248 y \#24
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{255}
-{Como diseñador del juego quiero que cada vez que un equipo gane el balon o saque comenzando un turno nuevo, se elija una jugada ofensiva del técnico y se ejecute esa jugada para determinar las acciones que cada jugador realiza en un turno.}
+{255: Elección de jugada ofensiva}
+{Como diseñador del simulador quiero que cada vez que un equipo gane el balon o saque comenzando un turno nuevo, se elija una jugada ofensiva del técnico y se ejecute esa jugada para determinar las acciones que cada jugador realiza en un turno.}
 {8 pt.}
 {Must Have}
 {Especifica cómo prosigue el juego luego de que un equipo comienza a comportarse como ``atacante''. Esto último sucede si comienza un nuevo turno
@@ -259,11 +259,11 @@ hechas por los jugadores del equipo A, hasta perder el balón o haber anotado. L
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{256}
-{Como diseñador del juego quiero que cada vez que un equipo pierda el balon o el rival saque comenzando un turno nuevo, se elija una jugada defensiva del tecnico y se ejecute esa jugada para determinar las acciones que cada jugador realiza en un turno.}
+{256: Elección de jugada defensiva}
+{Como diseñador del simulador quiero que cada vez que un equipo pierda el balon o el rival saque comenzando un turno nuevo, se elija una jugada defensiva del tecnico y se ejecute esa jugada para determinar las acciones que cada jugador realiza en un turno.}
 {8 pt.}
 {Must Have}
-{Es el caso contrario a la story \#256. En este caso se especifica como prosigue el juego cuando el equipo pierde el balón o comienza un nuevo turno en
+{Es el caso contrario a la story \#256. En este caso se especifica como prosigue la simulación cuando el equipo pierde el balón o comienza un nuevo turno en
 el que el rival tiene el balón. En este caso, se elige una jugada ofensiva y se comienza a ejecutar.}
 {Se realiza un turno de una simulación en donde el equipo B comienza defendiendo. Al finalizar el turno, se analizan las acciones
 hechas por los jugadores del equipo B, hasta que el equipo rival haya anotado o haber recuperado el balón. Las mismas deberían coincidir con una de las jugadas defensivas del técnico del equipo B.  }
@@ -285,8 +285,8 @@ hechas por los jugadores del equipo B, hasta que el equipo rival haya anotado o 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{248}
-{ Como diseñador del juego quiero que los jugadores realicen pases para evadir al equipo contrario y avanzar con la pelota.}
+{248: Simulador - Pases}
+{ Como diseñador del simulador quiero que los jugadores realicen pases para evadir al equipo contrario y avanzar con la pelota.}
 {5 pt.}
 {Must Have}
 {El pase realizado por un jugador debe realizarse en posesión de la pelota y:
@@ -325,8 +325,8 @@ hechas por los jugadores del equipo B, hasta que el equipo rival haya anotado o 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{249}
-{Como diseñador del juego quiero que los jugadores tiren al aro para intentar aumentar los puntos de sus equipos}
+{249: Simulador - Tiros}
+{Como diseñador del simulador quiero que los jugadores tiren al aro para intentar aumentar los puntos de sus equipos}
 {3 pt.}
 {Must Have}
 {El tiro realizado por un jugador debe realizarse en posesión de la pelota y:
@@ -372,8 +372,8 @@ Dicho jugador debería realizar tiros de 2 y 3 puntos exitosamente.}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{250}
-{Como diseñador del juego quiero que si la pelota queda dividida en el aire todos los jugadores puedan saltar para intentar atraparla (rebotearla).}
+{250: Simulador - Reboteo}
+{Como diseñador del simulador quiero que si la pelota queda dividida en el aire todos los jugadores puedan saltar para intentar atraparla (rebotearla).}
 {8 pt.}
 {Must Have}
 {Los jugadores deben saltar de forma intercalada entre el equipo defensivo y ofensivo, en orden decreciente de posición (5 defensivo, 5 ofensivo, 4 defensivo, 4 ofensivo, etc.). Si alguno la atrapa, el turno no se acaba y el rol de atacante lo tendrá el equipo al que pertenezca el jugador que tomó la pelota. Si ninguno de los 10 jugadores la atrapa, la pelota sale de la cancha y se termina el turno.}
@@ -408,8 +408,8 @@ Dicho jugador debería realizar tiros de 2 y 3 puntos exitosamente.}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{260}
-{Como diseñador del juego quiero que el ganador de cada desafío sea el equipo que más puntos obtuvo en la simulación para que se corresponda con la realidad.}
+{260: Simulador - Ganador}
+{Como diseñador del simulador quiero que el ganador de cada desafío sea el equipo que más puntos obtuvo en la simulación para que se corresponda con la realidad.}
 {1 pt.}
 {Must Have}
 {Especifica cómo seleccionar al equipo ganador. 
@@ -433,12 +433,12 @@ Asumimos que el score lo vamos guardando minuto a minuto tras cada turno para re
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{259}
-{Como diseñador del juego quiero que si el resultado del partido después del último turno fue un empate entonces se realicen 6 turnos extra para no permitir resultados empatados.}
+{259: Simulador - Empates}
+{Como diseñador del simulador quiero que si el resultado del partido después del último turno fue un empate entonces se realicen 6 turnos extra para no permitir resultados empatados.}
 {2 pt.}
 {Must Have}
 {Si luego de los 6 turnos queda en empate, se realizan otros 6, y así sucesivamente hasta que haya un ganador.}
-{Forzar una simulación en donde ambos equipos terminen empatados luego de los 40 turnos iniciales. El juego no debería finalizar y deberían jugarse 6 turnos más. Al finalizar el juego debería haber un ganador, y la cantidad de turnos extras jugados debería ser un múltiplo de 6.}
+{Forzar una simulación en donde ambos equipos terminen empatados luego de los 40 turnos iniciales. La simulación no debería finalizar y deberían jugarse 6 turnos más. Al finalizar el juego debería haber un ganador, y la cantidad de turnos extras jugados debería ser un múltiplo de 6.}
 
 \begin{taskstable}
  \task
@@ -457,7 +457,7 @@ Asumimos que el score lo vamos guardando minuto a minuto tras cada turno para re
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sprintstory
-{240}
+{240: Log de la simulación}
 {Como participante quiero acceder al detalles de todas las jugadas de todos los turnos de la simulación para analizar las distintas estrategias y mejorarlas.}
 {5 pt.}
 {Must Have}

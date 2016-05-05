@@ -2,50 +2,28 @@ A continuación presentamos las user stories que forman parte de el backlog del 
 
 Para mayor claridad, fueron ordenadas según categorías funcionales y por valor de negocio (de mayor a menor).
 
-\subsection{Registro de Usuarios}
+\subsection{Registro y autenticación de usuarios}
 
 \simplestory
-{216}
-{Como usuario no registrado quiero ingresar mi nombre, mi cuenta de email y una contraseña para poder registrarme en la aplicación.}
-{3 pt.}
+{337: Manejo de usuarios}
+{Como diseñador del juego quiero que los usuarios puedan registrarse, loguearse y desloguearse de la aplicación para incrementar la seguridad la aplicación}
+{5 pt.}
 {Must Have}
 {-}
-
-\vspace{1cm}
-
-\simplestory
-{228}
-{Como usuario registrado quiero autenticarme en la aplicación usando mi cuenta de email y una contraseña para ingresar a la aplicación.}
-{3 pt.}
-{Must Have}
-{-}
-
-\vspace{1cm}
-
-\simplestory
-{229}
-{Como usuario logueado quiero desloguearme para finalizar el uso de la aplicación.}
-{1 pt.}
-{Great}
-{-}
-
-\vspace{1cm}
 
 \subsection{Desaf\'ios}
 
 \simplestory
-{231}
+{231: Crear desafío}
 {Como participante quiero crear un desafío para aparecer en el listado de desafíos disponibles.}
 {3 pt.}
 {Must Have}
-{\begin{itemize}
-\item Sólo el workflow de creación del desafío, cada componente está en otra user story.
-\end{itemize}}
+{-}
 
 \vspace{1cm}
 
 \simplestory
-{239}
+{239: Aceptar desafío}
 {Como participante desafiado quiero aceptar un desafío para ganar fichas e ir aumentando el ranking dentro del sistema.}
 {3 pt.}
 {Must Have}
@@ -54,8 +32,8 @@ Para mayor claridad, fueron ordenadas según categorías funcionales y por valor
 \vspace{1cm}
 
 \simplestory
-{261}
-{Como participante quiero ver la cantidad de puntos que realizó cada equipo en la simulación del desafío (score) y que se indique el ganador para saber qué tan bien o mal funcionó el equipo y observar a simple vista si gané o perdí.
+{261: Ver resultados por desfío}
+{Como participante quiero ver la cantidad de puntos que realizó cada equipo en la simulación de un desafío (score) y que se indique el ganador para saber qué tan bien o mal funcionó el equipo y observar a simple vista si gané o perdí.
 }
 {2 pt.}
 {Great}
@@ -65,46 +43,33 @@ Para mayor claridad, fueron ordenadas según categorías funcionales y por valor
 
 \simplestory
 {241}
-{Como participante quiero ver tabla de posiciones en base a desafíos ganados/perdidos para compararse con otros participantes.}
+{Como participante quiero ver tabla de posiciones en base a desafíos ganados/perdidos para compararme con otros participantes.}
 {2 pt.}
 {Good}
 {-}
 
 \vspace{1cm}
-
-
 
 \subsection{Equipos}
 
 \simplestory
-{230}
-{Como participante quiero armar un equipo de basket para utilizarlo en desafíos.}
-{3 pt.}
+{230: Armar equipo}
+{Como participante quiero armar un equipo de basket con un tecnico y un nombre para utilizarlo en desafíos.}
+{5 pt.}
 {Must Have}
 % No queda muy lindo el itemize adentro de la tabla...
 {\begin{itemize}
-\item El equipo debe tener 5 jugadores (base, escolta, alero, ala pivot, pivot) elegidos de una lista con todos los jugadores de la liga.
+\item El equipo debe tener 5 jugadores (base, escolta, alero, ala pivot, pivot) elegidos de una lista con todos los jugadores de las ligas.
 \item Cada jugador de la lista permitirá acceder a su costo (valor ficticio) y a sus estadísticas.
-\item Se deberá validar que no se supere el cap.
+\item Se deberá validar que no se supere el capital informado por la aplicación.
+\item Se deberá poder ver las jugadas que tiene asociadas cada técnico
 \end{itemize}}
 
 \vspace{1cm}
 
 \simplestory
-{238}
-{Como administrador del equipo quiero elegir el técnico que dirige a mi equipo para personalizar mi equipo y determinar las posibles estrategias ofensivas y defensivas.}
-{2 pt.}
-{Must Have}
-{\begin{itemize}
-\item Elegir técnico de una lista con todos los técnicos existentes en la liga.
-\item Ver jugadas que tiene asociadas cada técnico.
-\end{itemize}}
-
-\vspace{1cm}
-
-\simplestory
-{232}
-{Como administrador del equipo quiero ingresar un nombre para mi equipo para personalizar mi equipo.}
+{267: Guardar equipo}
+{Como participante quiero guardar equipos creados en mi lista de equipos y reutilizarlos para no tener que volver a armar 2 veces el mismo equipo}
 {1 pt.}
 {Good}
 {-}
@@ -112,59 +77,33 @@ Para mayor claridad, fueron ordenadas según categorías funcionales y por valor
 \vspace{1cm}
 
 \simplestory
-{267}
-{Como participante quiero guardar un equipo creado en mi lista de equipos para utilizarlo en desafíos posteriores.}
+{237: Jugador estrella}
+{Como participante quiero determinar el jugador estrella de mi equipo para personalizar mi equipo y maximizar la ventaja en la simulación del partido}
 {1 pt.}
 {Good}
 {-}
 
 \vspace{1cm}
-
-\simplestory
-{236}
-{Como participante quiero elegir un equipo de la lista para utilizarlo en el desafìo actual.}
-{1 pt.}
-{Good}
-{-}
-
-\vspace{1cm}
-
-
-\simplestory
-{237}
-{Como administrador del equipo quiero determinar el jugador estrella de mi equipo para personalizar mi equipo.}
-{1 pt.}
-{Good}
-{-}
-
-\vspace{1cm}
-
-
 
 \subsection{Capital}
 
 \simplestory
-{234}
-{Como diseñador del juego quiero que los participantes tengan un capital inicial (cap) para comprar jugadores y armar equipos.}
-{1 pt.}
-{Great}
-{-}
-
-\vspace{1cm}
-
-\simplestory
-{235}
-{Como diseñador de la aplicación quiero hacer una carga inicial del valor ficticio por cada jugador para que descuenten ese valor del cap del administrador del equipo cuando son agregados al equipo.}
-{1 pt.}
+{234: Elección de jugadores}
+{Como diseñador del juego quiero realizar una carga del valor de los jugadores y sus datos estadísticos para que los participantes armen sus equipos}
+{2 pt.}
 {Great}
 {\begin{itemize}
-\item No se volverá a modificar
+\item El valor de los jugadores no se volverá a modificar
+\item Los porcentajes FG y 3P deben estar entre 0 y 100, APG $>=$ 0, RPG $>=$ 0, BPG $>=$ 0, SPG $>=$ 0, TO $>=$ 0, PPG $>=$ 0.
+\item Inicialmente utilizar 100 como cota superior para todas las estadísticas. Sujeto a cambios
 \end{itemize}}
 
 \vspace{1cm}
 
+\vspace{1cm}
+
 \simplestory
-{243}
+{243: Capital disponible}
 {Como participante quiero poder ver/conocer mi cap para determinar los límites monetarios del equipo que puedo armar.}
 {1 pt.}
 {Great}
@@ -173,52 +112,35 @@ Para mayor claridad, fueron ordenadas según categorías funcionales y por valor
 \vspace{1cm}
 
 \simplestory
-{246}
-{Como diseñador del juego quiero que quiero que al ganar un desafio por una diferencia abultada, el dueño del equipo reciba un pequeño aumento de su cap para para recompensar las elecciones tomadas por el apostador.}
+{246: Aumento de cap por victoria abultada}
+{Como diseñador del juego quiero que al ganar un desafio por una diferencia abultada, el dueño del equipo reciba un pequeño aumento de su cap para para recompensar las elecciones tomadas por el apostador.}
 {1 pt.}
 {Great}
 {\begin{itemize}
 \item Diferencia abultada = más de 20 puntos
-\item Aumento de cap del 1\%
+\item Aumento de cap inicialmente es del 1\%, pero puede estar sometido a variaciones
 \end{itemize}}
 
 \vspace{1cm}
 
-
 \subsection{Fichas y Apuestas}
 
 \simplestory
-{233}
-{Como diseñador del juego quiero que los participantes dispongan de una cantidad inicial de fichas para hacer apuestas en los desafíos.}
-{1 pt.}
-{Great}
-{-}
-
-\vspace{1cm}
-
-\simplestory
-{245}
+{245: Premio en fichas por desafío ganado}
 {Como diseñador del juego quiero que al ganar un desafío, el dueño del equipo vencedor se lleve un premio base de fichas (independientemente de si se apostó o no) y el total de fichas apostadas para recompensar al usuario ganador.
 }
 {2 pt.}
 {Great}
 {\begin{itemize}
 \item Podría cambiar la manera de calcular ese ``premio base'' (por ejemplo podría dejar de ser fijo y ser una fórmula en función de algo), debería ser transparente para el sistema.
+\item Se le asigna a los participantes una cantidad inicial de fichas
+\item Los participantes pueden consultar sobre la cantidad de fichas disponible
 \end{itemize}}
 
 \vspace{1cm}
 
 \simplestory
-{244}
-{Como apostador quiero poder ver/conocer mis fichas disponibles para saber cuánto puedo apostar.}
-{1 pt.}
-{Great}
-{-}
-
-\vspace{1cm}
-
-\simplestory
-{242}
+{241: Ranking cantidad de desafíos ganados}
 {Como participante quiero ver tabla de posiciones en base a cantidad de fichas ganadas en apuestas para compararse con otros participantes.}
 {2 pt.}
 {Good}
@@ -226,33 +148,11 @@ Para mayor claridad, fueron ordenadas según categorías funcionales y por valor
 
 \vspace{1cm}
 
-
 \subsection{Datos estadísticos de jugadores}
 
 \simplestory
-{247}
-{Como participante quiero ver las estadisticas personales de cada jugador para tener algún criterio en la confección de mi equipo.}
-{2 pt.}
-{Great}
-{-}
-
-\vspace{1cm}
-
-\simplestory
-{262}
-{Como diseñador del juego quiero cargar jugadores y sus datos estadísticos manualmente para que haya jugadores en el sistema.}
-{3 pt.}
-{Average}
-{\begin{itemize}
-\item Los porcentajes FG y 3P deben estar entre 0 y 100, APG $>=$ 0, RPG $>=$ 0, BPG $>=$ 0, SPG $>=$ 0, TO $>=$ 0, PPG $>=$ 0.
-\item Se ingresan los jugadores uno por uno.
-\end{itemize}}
-
-\vspace{1cm}
-
-\simplestory
-{263}
-{Como diseñador del juego quiero cargar jugadores y sus datos estadísticos automáticamente desde una página o servicio web para que haya jugadores en el sistema.}
+{263: Carga de jugadores automática}
+{Como diseñador del simulador quiero cargar jugadores y sus datos estadísticos automáticamente desde una página o servicio web para que haya jugadores en el sistema.}
 {8 pt.}
 {Nice to Have}
 {\begin{itemize}
@@ -264,18 +164,18 @@ Para mayor claridad, fueron ordenadas según categorías funcionales y por valor
 \vspace{1cm}
 
 \simplestory
-{268}
-{Como diseñador del juego quiero que se obtengan datos de popularidad en Twitter de los jugadores para afectar las fórmulas de umbral de éxito.}
+{268: Datos de twitter}
+{Como diseñador del simulador quiero que se obtengan datos de popularidad en Twitter de los jugadores para afectar las fórmulas de umbral de éxito.}
 {13 pt.}
 {Nice to Have}
-{Los datos tienen que obtenerse durante la simulación del partido y en lo posible tener en cuenta si son positivos o negativos.}
+{-}
 
 \vspace{1cm}
 
 \subsection{Libro de Jugadas}
 \simplestory
 {265}
-{Como diseñador del juego quiero crear técnicos asociándolos con un libro de jugadas para que haya técnicos en el sistema}
+{Como diseñador del simulador quiero crear técnicos asociándolos con un libro de jugadas para que haya técnicos en el sistema}
 {2 pt.}
 {Average}
 {-}
