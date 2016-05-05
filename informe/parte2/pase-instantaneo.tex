@@ -1,4 +1,7 @@
+En la simulación no abstrajimos en una clase el concepto de pelota, sino que son las jugadas ofensivas quienes determinan quien tiene la pelota en un momento determinado.
+
 Las jugadas ofensivas inicializan un colaborador interno portadorDelBalon al ser instanciadas, que representa el jugador que debe arrancar con la pelota.
+A medida que se realizan pases dicho portador se va actualizando y el receptor del pase se convierte en el nuevo portador.
 Sin embargo, durante la ejecución de un turno pueden suceder eventos relacionados con la recuperacion del balon(intercepción exitosa u obtención de rebote)
 que obliguen a los técnicos a elegir nuevamente una jugada para el mismo turno que sigue corriendo. Al analizar la jugada ofensiva
 elegida no es posible asegurar que el portadorDelBalon inicial se corresponda con el portador del balon en el contexto de la ejecución del turno. 
