@@ -1,13 +1,15 @@
 El subsistema de desaf\'ios modela los participantes, el armado de equipos con jugadores reales, apuestas con fichas y creaci\'on y ejecuci\'on
 de desaf\'ios.
 
+Los jugadores reales representan a los posibles jugadores que se pueden usar para armar equipos. Los Equipos reales son los equipos de la liga.
+
 A continuaci\'on presentamos el diagrama de clases y explicaremos la resoluci\'on de los principales casos de uso.
 
 \newpage
 \begin{landscape}
 
   \begin{figure}[h!]
-   \includegraphics[scale=0.35]{imagenes/defender-pase.png}
+   \includegraphics[scale=0.35]{imagenes/clases-subsistema-desafios.png}
    \caption{}
   \end{figure}
 
@@ -80,6 +82,12 @@ mensaje ``unParticipante.guardarEquipo(unEquipoParticipante)''.
 \subsubsection{Apuestas}
 Las apuestas se modelan usando \emph{Null Object Pattern} para permitir desafíos sin apuesta. La {\tt ApuestaNula} tendrá un valor de 0 fichas.
 
+\begin{figure}[h!]
+   \includegraphics[width=0.5\textwidth]{imagenes/clases-apuestas.png}
+   \caption{Modelado de Apuestas}
+\end{figure}
+
+
 \subsubsection{Crear y simular desafíos}
 Al crear un desafío, como vimos anteriormente, se agrega a la lista de desafíos abiertos del participante creador. Ahora analizaremos el proceso de
 creación de un desafío.
@@ -100,16 +108,57 @@ Un desafío puede estar abierto, cerrado o terminado:
  \item[Abierto:] Sólo responde los mensajes ``inscribirOponente'', ``apuesta'' y ``ganador?'' (que siempre devolverá False). El resto de los mensajes
  arrojarán excepciones pertinentes, dado que no tiene sentido que sean invocados en otro caso. Cuando se inscribe un oponente, el desafío deja de estar
  en la lista de desafios abiertos del participante y pasa a estar en estado cerrado, y se invoca a ``simular()''.
- \item[Cerrado:] El único mensaje que se responde es ``simular'' y el resto arrojarán execpciones. Dado que el flujo de ejecución no termina
+ \item[Cerrado:] Los mensajes que se responde son ``simular'' y ``equipoDesafiado'', el resto arrojarán execpciones. Dado que el flujo de ejecución no termina
  desde que se inscribe un oponente hasta el fin de la simulación, los desafíos en este estado duran muy poco tiempo (desde el punto de vista del oponente
  que se inscribe, cuando el mensaje retorna, la simulación ya finalizó). Luego se pasa al estado Finalizado, indicando previamente a ambos participantes
  si el desafío fue ganado o perdido (cada uno lo agregará a la lista que corresponda) y pagando apuestas de ser necesario.
  \item[Terminado:] Responde a todos los mensajes excepto ``inscribirOponente'' y ``simular''.
 \end{description}
 
-El siguiente diagrama se secuencia muestra el siguiente escenario:
+Esta idea de los estados se corresponde con el patrón de diseño \emph{State} ya que la clase Desafío cambia todo su comportamiento cuando
+cambia de estado (como si cambiara de clase).
 
-``Gastón (un participante) creó un desafío con su equipo llamado 'LosPumas' con una apuesta de 10 fichas y Martín se inscribe con su equipo llamado 
-'AllBlacks'.''
+A continuación se muestra un escenario de inscripción y simulación de un desafío.
 
+  \begin{figure}[h!]
+   \includegraphics[width=\textwidth]{imagenes/desafios-inscribirOponente-obj.png}
+   
+   \caption{``Gastón (un participante) creó un desafío con su equipo llamado 'LosPumas' con una apuesta de 10 fichas y Martín se inscribe con su equipo llamado 
+'AllBlacks'.'' La flecha roja es conocimiento débil pero luego de ejecutar ``cambiarEstado'' pasa a ser conocimiento fuerte.}
+  \end{figure}
+  
+  \begin{figure}[h!]
+   \includegraphics[width=\textwidth]{imagenes/desafios-simular-obj.png}
+   \caption{``Siguiendo el escenario anterior, la simulación termina en que Gastón es ganador con Los Pumas con 50 puntos y Martín pierde con AllBlacks con 20 puntos.
+Por ser la diferencia mayor a 20 puntos, Gastón gana 30 fichas (20 de la apuesta más 10 del premio base) y aumenta su cap en 1\%.''}
+  \end{figure}
 
+\newpage
+\begin{landscape}
+
+  \begin{figure}[h!]
+   \includegraphics[scale=0.4]{imagenes/desafios-inscribirOponente.png}
+   \caption{}
+  \end{figure}
+
+\end{landscape}
+\newpage
+\begin{landscape}
+
+  \begin{figure}[h!]
+   \includegraphics[scale=0.35]{imagenes/desafios-simular.png}
+   \caption{}
+  \end{figure}
+
+\end{landscape}
+\newpage
+
+En el primer diagrama observar que cuando se llama a ``simular()'' del Desafío, el estado ya es EstadoDesafioCerrado (por eso en el segundo diagrama
+el estadoDesafíoCerrado es un colaborador interno).
+
+Cuando se termina de ejecutar la simulación, se informa a los participantes quién ganó y quién perdió, se paga la apuesta, en este caso se aumenta
+el cap en un porcentaje y se cambia el estado del desafío a Terminado. Los valores parametrizables por el momento se modaleron como embebidos en la
+clase EstadoDesafioCerrado (10 puntos de premio base, 1\% de aumento de cap, 20 puntos como resultado abultado).
+
+Cabe aclarar que {\tt Participante.pagar(CantidadDeFichas)} asume que siempre se puede pagar (porque desde afuera pueden consultarse las fichas disponibles).
+ En caso de no alcanzar las fichas, arroja una excepción.
