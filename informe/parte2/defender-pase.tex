@@ -6,17 +6,34 @@ ofensivo. En el caso de una jugada defensiva hombre a hombre, cada acción de un
 contraria realizada por el jugador en la misma posición del equipo rival. Sin embargo, podría existir una jugada defensiva que marque únicamente los tiros de 3 puntos pero cada uno de ellos
 con varios jugadores. Es por eso que cada acción ofensiva puede ser defendida con una serie de movimientos.
 
-La jugada defensiva recibe el mensaje defender, pero en un principio desconoce \emph{qué} acción debe defender. Para evitar el uso de \textbf{if} se utiliza el double dispatch.
-Al objeto pasado por parámetro se le envía el mensaje \emph{informarTipoDeMovimiento}.
+La jugada defensiva recibe el mensaje defender, pero en un principio desconoce \emph{qué} acción debe defender. Para evitar el uso de \textbf{if instanceOf} 
+sobre el tipo del movimiento ofensivo: pase, tiro de 2 puntos, tiro de 3 puntos se utiliza \emph{double dispatch}.
+Al objeto pasado por parámetro se le envía el mensaje \emph{informarTipoDeMovimiento}. 
+
+Las jugadas defensivas utilizan fuertemente las posiciones de los jugadores atacantes. Por lo tanto, definimos una clase abstracta \textbf{JugadaDefensiva} que incluye los mensajes
+que toda jugada defensiva debería saber responder. Saber responder estos mensajes no significa que deba defenderse con alguna acción. La secuencia de acciones a devolver puede ser 
+vacía ([ ]). Por ejemplo, en el caso de marcar únicamente los tiros de 3 puntos, los mensajes 'defenderTiroPor2PuntosDe*' 
+deberían responderse con un array vacío ([ ]).
+
+\begin{figure}[h!]
+  \includegraphics[scale=0.25]{imagenes/diagrama-clases-defensiva.png}
+  \caption{Diagrama de clases relacionado con las jugadas defensivas y sus colaboraciones}
+\end{figure}
+
+En el caso de JugadaDefensivaHombreAHombre, nuevamente se utiliza \emph{double dispatch}, en este caso para evitar el uso de un \textbf{if} del estilo \textbf{instanceOf PosicionBase}.
+De esta manera se obtiene la posición del jugador que ha originado la acción y responde con una única acción defendida por el jugador del equipo rival.
+El siguiente diagrama de secuencia representa la forma en que se obtiene la respuesta defensiva del equipo rival a \emph{Los Pumas} correspondiente a un pase entre 
+el base Martín y el escolta Gastón. La respuesta obtenida es un arreglo con un único elemento que contiene una intercepción realizada por el base del equipo rival.
 
 \newpage
 \begin{landscape}
 
-  \begin{figure}[h!]
+\begin{figure}[h!]
    \includegraphics[scale=0.35]{imagenes/defender-pase.png}
-   \caption{}
-  \end{figure}
+   \caption{Contexto: La jugada defensiva del equipo rival calcula la serie de movimientos defensivos en respuesta a un pase hecho por Martín, el base de Los Pumas}
+\end{figure}
 
 \end{landscape}
 \newpage
+
 
