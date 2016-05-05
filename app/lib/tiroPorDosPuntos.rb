@@ -11,7 +11,7 @@ class TiroPorDosPuntos
     acciones_defensivas.each do |accion_def|
       if accion_def.esExitoso
         @defensa_exitosa = accion_def
-        acciones_defensivas = true
+        esDefensaExitosa = true
         break
       end
     end

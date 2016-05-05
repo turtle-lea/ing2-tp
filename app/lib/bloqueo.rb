@@ -5,7 +5,7 @@ class Bloqueo
   end
 
   def ejecutar(unTurno)  
-    unTurno.logger.notificarBloqueoExitoso(jugador)
+    unTurno.logger.notificarBloqueoExitoso(self)
     unTurno.reboteo
   end
 
