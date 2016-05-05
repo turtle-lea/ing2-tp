@@ -1,0 +1,115 @@
+El subsistema de desaf\'ios modela los participantes, el armado de equipos con jugadores reales, apuestas con fichas y creaci\'on y ejecuci\'on
+de desaf\'ios.
+
+A continuaci\'on presentamos el diagrama de clases y explicaremos la resoluci\'on de los principales casos de uso.
+
+\newpage
+\begin{landscape}
+
+  \begin{figure}[h!]
+   \includegraphics[scale=0.35]{imagenes/defender-pase.png}
+   \caption{}
+  \end{figure}
+
+\end{landscape}
+\newpage
+
+
+\subsubsection{Participante}
+Un participante se crea con un {\tt Nombre}, {\tt Mail} y {\tt Password} que son esenciales al participante y serán inmutables en este modelo.
+El método de creación de instancia es el siguiente:
+
+\begin{algorithmic}
+	\Function{Participante}{Nombre unNombre, Mail unMail, Password unaPassword}
+	  \State nombre = unNombre
+	  \State mail = unMail
+	  \State password = unaPassword
+	  \State cap = new Capital(CAP\_INICIAL)
+	  \State fichasDisponibles = new CantidadDeFichas(FICHAS\_INICIALES)
+	  \State equiposGuardados = [\ ]
+	  \State desafiosAbiertos = [\ ]
+	  \State desafiosGanados = [\ ]
+	  \State desafiosPerdidos = [\ ]
+	\EndFunction
+\end{algorithmic}
+
+CAP\_INICIAL y FICHAS\_INICIALES son constantes predefinidas en la clase.
+
+\begin{figure}[h!]
+   \includegraphics[width=\textwidth]{imagenes/clases-participante.png}
+   \caption{Modelado de Participantes}
+\end{figure}
+
+\subsubsection{Armar equipos}
+Para armar equipos existe la clase {\tt ConstructorDeEquipos} que contiene la lógica de control de capital. Se inicializa con un Participante (que
+conoce su capital) y luego se
+van eligiendo jugadores. Cada vez que se elige un jugador, se resta el costo del jugador al capital ($unJugadorReal.costo$) y se actualiza el saldo
+restante en un contador interno. Si el jugador
+es reemplazado por otro, primero se suma el costo del jugador que se saca y se resta el que se pone (usando los mensajes ``restar(Costo)'' y ``sumar(Costo)''
+de la clase {\tt Capital}).
+
+Si se intenta restar un costo mayor al capital disponible, el método de ``restar(Costo)'' lanza una excepción que será elevada al método que llamó
+al {\tt ConstructorDeEquipos}, informando la imposibilidad de comprar ese jugador por falta de fondos.
+
+El mensaje ``comprar()'' retorna el equipo armado.
+
+Los jugadores reales, sus costos y estadísticas se pueden acceder a partir de los equipos reales {\tt EquipoReal} que representan los equipos de la 
+liga real.
+
+Una vez que el equipo fue armado, se puede usar para crear un desafío o para guardarlo para uso futuro. En el primer caso, se utiliza el mensaje
+``unParticipante.crearDesafio(unEquipoParticipante, unaApuesta)'', mientras que en el último, se usa el
+mensaje ``unParticipante.guardarEquipo(unEquipoParticipante)''.
+
+\begin{figure}[h!]
+   \includegraphics[width=\textwidth]{imagenes/clases-armar-equipos.png}
+   \caption{Modelado del ConstructorDeEquipos}
+\end{figure}
+
+\begin{algorithmic}
+	\Function{Participante::crearDesafio}{EquipoParticipante unEquipo, Apuesta unaApuesta}
+	  \State desafiosAbiertos.add(new Desafio(unEquipo, unaApuesta))
+	\EndFunction
+\end{algorithmic}
+
+\begin{algorithmic}
+	\Function{Participante::guardarEquipo}{EquipoParticipante unEquipo}
+	  \State equiposGuardados.add(unEquipo)
+	\EndFunction
+\end{algorithmic}
+
+\subsubsection{Apuestas}
+Las apuestas se modelan usando \emph{Null Object Pattern} para permitir desafíos sin apuesta. La {\tt ApuestaNula} tendrá un valor de 0 fichas.
+
+\subsubsection{Crear y simular desafíos}
+Al crear un desafío, como vimos anteriormente, se agrega a la lista de desafíos abiertos del participante creador. Ahora analizaremos el proceso de
+creación de un desafío.
+
+\begin{algorithmic}
+	\Function{Desafio}{EquipoParticipante unEquipo, Apuesta unaApuesta}
+	  \State equipoParticipanteDesafiante = unEquipo
+	  \State apuesta = unaApuesta
+	  \State estado = new EstadoDesafioAbierto(self)
+	\EndFunction
+\end{algorithmic}
+
+Observar que el colaborador equipoParticipanteDesafiado quedó en null, pero esto no importa dado que ese equipo no se puede acceder desde
+afuera (el {\tt EstadoDesafioAbierto} no lo permite).
+
+Un desafío puede estar abierto, cerrado o terminado:
+\begin{description}
+ \item[Abierto:] Sólo responde los mensajes ``inscribirOponente'', ``apuesta'' y ``ganador?'' (que siempre devolverá False). El resto de los mensajes
+ arrojarán excepciones pertinentes, dado que no tiene sentido que sean invocados en otro caso. Cuando se inscribe un oponente, el desafío deja de estar
+ en la lista de desafios abiertos del participante y pasa a estar en estado cerrado, y se invoca a ``simular()''.
+ \item[Cerrado:] El único mensaje que se responde es ``simular'' y el resto arrojarán execpciones. Dado que el flujo de ejecución no termina
+ desde que se inscribe un oponente hasta el fin de la simulación, los desafíos en este estado duran muy poco tiempo (desde el punto de vista del oponente
+ que se inscribe, cuando el mensaje retorna, la simulación ya finalizó). Luego se pasa al estado Finalizado, indicando previamente a ambos participantes
+ si el desafío fue ganado o perdido (cada uno lo agregará a la lista que corresponda) y pagando apuestas de ser necesario.
+ \item[Terminado:] Responde a todos los mensajes excepto ``inscribirOponente'' y ``simular''.
+\end{description}
+
+El siguiente diagrama se secuencia muestra el siguiente escenario:
+
+``Gastón (un participante) creó un desafío con su equipo llamado 'LosPumas' con una apuesta de 10 fichas y Martín se inscribe con su equipo llamado 
+'AllBlacks'.''
+
+
