@@ -20,8 +20,8 @@ Si son exitosas, se ejecutan desde el contexto de un movimiento ofensivo.
 Para modelar el comportamiento descripto realizamos el siguiente diseño:
 
 \begin{figure}[h!]
-  \includegraphics[scale=0.25]{imagenes/movimientos.png}
+  \includegraphics[scale=0.25]{imagenes/diagrama-clases-movimiento.png}
   \caption{Diagrama de clases para los movimientos ofensivos y defensivos}
 \end{figure}
 
-Para modelar el comportamiento común entre los movimientos ofensivos creamos una clase abstracta MovimientoOfensivo que sabe responder al mensaje de ejecutarContra(unaAccionDefensiva). En el caso de los movimientos defensivos creamos una clase absracta MovimientoDefensivo que sabe responder a ejecutar() y esExitoso(). 
+Para modelar el comportamiento común entre los movimientos ofensivos creamos una clase abstracta MovimientoOfensivo que sabe responder al mensaje ``ejecutarContra(unaAccionDefensiva)''. En el caso de los movimientos defensivos creamos una clase absracta MovimientoDefensivo que sabe responder a ``ejecutar()'' y ``esExitoso()''. 
