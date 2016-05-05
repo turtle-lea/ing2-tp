@@ -89,12 +89,12 @@ class LoggerEnConsola
     puts "Tras un gran encuentro, los equipos se encuentran empatados. Comienza la prorroga"
   end
 
-  def notificarEleccionDeJugadaOfensiva()
-
+  def notificarEleccionDeJugadaOfensiva(unaJugada)
+    puts "Jugada ofensiva elegida: #{unaJugada.nombre}"
   end
 
-  def notificarEleccionDeJugadaDefensiva()
-
+  def notificarEleccionDeJugadaDefensiva(unaJugada)
+    puts "Jugada defensiva elegida: #{unaJugada.nombre}"
   end
 
   def notificarInicioDeTurno(numeroDeTurno)

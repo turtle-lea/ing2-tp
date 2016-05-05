@@ -1,4 +1,9 @@
 class JugadaDefensivaHombreAHombre < JugadaDefensiva
+
+  def nombre
+    "Jugada defensiva hombre a hombre"
+  end
+
   def initialize(equipo_defensivo)
     super
   end

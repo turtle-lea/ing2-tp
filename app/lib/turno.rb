@@ -23,7 +23,9 @@ class Turno
 
   def elegir_jugadas
     @jugada_ofensiva = @equipo_ofensivo.tecnico.elegirJugadaOfensiva
+    logger.notificarEleccionDeJugadaOfensiva(@jugada_ofensiva)
     @jugada_defensiva = @equipo_defensivo.tecnico.elegirJugadaDefensiva
+    logger.notificarEleccionDeJugadaDefensiva(@jugada_defensiva)
   end
 
   def proxima_accion
