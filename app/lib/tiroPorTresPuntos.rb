@@ -5,7 +5,7 @@ class TiroPorTresPuntos
   end
 
   def ejecutar_contra(acciones_defensivas, turno)
-    esTiroExitoso = @resolvedor_de_tiro_por_tres_puntos.resolver(self.jugador)
+    esTiroExitoso = @resolvedor_de_tiro_por_tres_puntos.resolver(jugador)
     turno.logger.notificarIntentoTiroTresPuntos(self)
     esDefensaExitosa = false
     acciones_defensivas.each do |accion_def|

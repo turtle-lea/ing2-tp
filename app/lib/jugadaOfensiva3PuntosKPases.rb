@@ -12,7 +12,7 @@ class JugadaOfensiva3PuntosKPases
 
   def proximoMovimiento()
  	  # tuvo exito el pase anterior
-    portadorDelBalon = @proximoPortador
+    @portadorDelBalon = @proximoPortador
 
     if @cantidadDePasesRestantes.valor > 1
       otroJugador = self.jugadorAlAzarQueNoSea(portadorDelBalon)
@@ -21,13 +21,13 @@ class JugadaOfensiva3PuntosKPases
     end
 
     if @cantidadDePasesRestantes.valor == 1
-      otroJugador = self.tiradorAlAzarQueNoSea(@portadorDelBalon)
-      unMovimientoOfensivo = armarUnPaseEntre(@portadorDelBalon, otroJugador)
+      otroJugador = self.tiradorAlAzarQueNoSea(portadorDelBalon)
+      unMovimientoOfensivo = armarUnPaseEntre(portadorDelBalon, otroJugador)
       @proximoPortador = otroJugador
     end
 
     if @cantidadDePasesRestantes.valor == 0
-      unMovimientoOfensivo = armarUnTiroAlAro(@portadorDelBalon)
+      unMovimientoOfensivo = armarUnTiroAlAro(portadorDelBalon)
     end
 
     @cantidadDePasesRestantes = CantidadDePases.new(@cantidadDePasesRestantes.valor - 1)

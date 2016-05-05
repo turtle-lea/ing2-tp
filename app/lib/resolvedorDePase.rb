@@ -5,7 +5,7 @@ class ResolvedorDePase
   def resolver(unJugador)
   	to = unJugador.estadisticas.turnOvers
   	umbral = 1 - to * 0.1
-  	rand = rand(0.0..1.0)
+  	rand = GeneradorDeNumerosAleatorios.new(0,1).generarUnReal
     rand <= umbral
   end
 
