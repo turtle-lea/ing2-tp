@@ -1,12 +1,13 @@
 class JugadaOfensiva3PuntosKPases
 
   def nombre
-    "Jugada ofensiva 3 puntos K pases"
+    "Jugada ofensiva 3 puntos #{@cantidadPasesInicial.valor} pases"
   end
 
   def initialize(unEquipo, unaCantidadDePases)
     @equipo = unEquipo
     @cantidadDePasesRestantes = unaCantidadDePases
+    @cantidadPasesInicial = unaCantidadDePases
     @portadorDelBalon = @equipo.base
     @proximoPortador = @equipo.base
   end
