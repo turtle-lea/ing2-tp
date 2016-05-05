@@ -1,0 +1,22 @@
+\subsection{Defendiendo un movimiento ofensivo}
+
+Se puede pensar que en el basket existe una acción contraria a cada movimiento ofensivo. Para el pase existe la intercepción y para el tiro el bloqueo. (El rebote no es considerado
+movimiento ofensivo). Por lo tanto, las jugadas defensivas tienen la oportunidad de responder con una secuencia de acciones defensivas (puede ser una o muchas) ante cada movimiento
+ofensivo. En el caso de una jugada defensiva hombre a hombre, cada acción de un jugador ofensivo en una posición determinada es defendida por una única acción 
+contraria realizada por el jugador en la misma posición del equipo rival. Sin embargo, podría existir una jugada defensiva que marque únicamente los tiros de 3 puntos pero cada uno de ellos
+con varios jugadores. Es por eso que cada acción ofensiva puede ser defendida con una serie de movimientos.
+
+La jugada defensiva recibe el mensaje defender, pero en un principio desconoce \emph{qué} acción debe defender. Para evitar el uso de \textbf{if} se utiliza el double dispatch.
+Al objeto pasado por parámetro se le envía el mensaje \emph{informarTipoDeMovimiento}.
+
+\newpage
+\begin{landscape}
+
+  \begin{figure}[h!]
+   \includegraphics[scale=0.35]{imagenes/defender-pase.png}
+   \caption{}
+  \end{figure}
+
+\end{landscape}
+\newpage
+
