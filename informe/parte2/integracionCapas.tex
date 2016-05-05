@@ -1,0 +1,31 @@
+En esta sección explicaremos cómo se combinan las capas de Desafíos y Simulador. Excluiremos de la explicación cómo resolver cuestiones de persistencia
+y de interfaz de usuario ya que consideramos que serán dos capas externas que pueden ser modeladas de manera independiente usando interfaces para
+comunicarse con la capa de desafíos.
+
+Para comunicar capas usamos inversión de dependencias. De esta manera, ninguna de las capas depende de la otra y modificaciones hechas sobre una de ellas
+no impactará en la otra.
+
+El modelo de clases es el siguiente:
+
+\newpage
+\begin{landscape}
+
+  \begin{figure}[h!]
+   \includegraphics[scale=0.4]{imagenes/clases-capas.png}
+   \caption{}
+  \end{figure}
+
+\end{landscape}
+\newpage
+
+Como se puede observar, para pasar información entre las capas usamos el concepto de DTO (Data Transfer Object). Este objeto en principio rompe la
+biyección del modelo conceputal al mundo real, pero nos permite tener objetos que no pertenecen a ninguna de las capas y \emph{no usan} ninguna clase
+dentro de las capas. De esta manera, ambas capas usan a estos objetos intermedios pero ahí se corta la cadena de dependencias. Tanto en la capa de desafíos
+como en la de simulación habrá traductores que convertirán un DTO en el objeto apropiado según la capa, como por ejemplo:
+\begin{itemize}
+ \item En la capa de desafíos, el EquipoDto se traduce a un EquipoParticipante que se mapea al equipo que arma un participante en el juego.
+ \item En la capa de simulación, el EquipoDto se traduce a un Equipo, que se mapea al equipo de una simulación de basket.
+\end{itemize}
+
+Además utilizamos el patrón \emph{Facade} para abstraer la funcionalidad del simulador en la clase {\tt SimuladorDeBasket}. Esta clase implementa
+la interfaz {\tt Simulador} para hacer la inversión de dependencias y eliminar acoplamiento entre las capas.
