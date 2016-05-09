@@ -9,11 +9,19 @@ def jugar_partido(equipo_1, equipo_2)
   partido.jugar
 end
 
-def demo1()
+def demo1
   jugar_partido(equipo_bulls, equipo_spurs)
 end
 
-def demo2()
-  jugar_partido(equipo_atenas, equipo_spurs)
+def demo2
+  jugar_partido(equipo_regatas_campeon_2013, equipo_spurs)
+end
+
+def demo_mareados
+  jugar_partido(equipo_spurs_mareados, equipo_regatas_campeon_2013)
+end
+
+def demo_mareados2
+  jugar_partido(equipo_spurs_mareados, equipo_spurs)
 end
 
