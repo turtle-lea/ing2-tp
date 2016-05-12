@@ -22,7 +22,7 @@ class Reboteo
     unTurno.logger.notificarReboteo
     while not @jugadores.empty?
       un_jugador = @jugadores.pop
-      if @un_resolvedor_de_reboteo.resolver(un_jugador)
+      if @un_resolvedor_de_reboteo.resolver(un_jugador, unTurno.logger)
         unTurno.logger.notificarGanadorReboteo(un_jugador)
         return unTurno.tomar_posesion_de_balon(un_jugador)
         break

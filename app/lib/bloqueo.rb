@@ -9,8 +9,9 @@ class Bloqueo
     unTurno.reboteo
   end
 
-  def esExitoso
-    @resolvedor_de_bloqueo.resolver(jugador)
+  def esExitoso(logger)
+    logger.notificarIntentoBloqueo(self)
+    @resolvedor_de_bloqueo.resolver(jugador, logger)
   end
 
   def jugador

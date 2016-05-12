@@ -9,8 +9,9 @@ class Intercepcion
     unTurno.cambio_de_posesion(self.jugador.equipo, self.jugador.equipo.oponente)
   end
 
-  def esExitoso
-    @resolvedor_de_intercepcion.resolver(self.jugador)
+  def esExitoso(logger)
+    logger.notificarIntentoIntercepcion(self)
+    @resolvedor_de_intercepcion.resolver(self.jugador, logger)
   end
 
   def jugador

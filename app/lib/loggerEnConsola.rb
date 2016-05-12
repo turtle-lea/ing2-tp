@@ -44,6 +44,10 @@ class LoggerEnConsola
     puts "#{unBloqueo.jugador.nombre} bloquea el balon"
   end
 
+  def notificarResultadoAccion(jugador, umbral, rand)
+    puts "(Jugador: #{jugador}, umbral: #{umbral}, rand: #{rand})"
+  end
+
   def notificarBloqueoFallido(unBloqueo)
     puts "#{unBloqueo.jugador.nombre} no logra bloquear el balon"
   end

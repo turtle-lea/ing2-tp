@@ -6,11 +6,11 @@ class Pase
   end
 
   def ejecutar_contra(acciones_defensivas, turno)
-    esPaseExitoso = @resolvedor_de_pase.resolver(self.jugador_origen)
     turno.logger.notificarIntentoPase(self)
+    esPaseExitoso = @resolvedor_de_pase.resolver(self.jugador_origen, turno.logger)
     esDefensaExitosa = false
     acciones_defensivas.each do |accion_def|
-      if accion_def.esExitoso
+      if accion_def.esExitoso(turno.logger)
         @defensa_exitosa = accion_def
         esDefensaExitosa = true
         break
