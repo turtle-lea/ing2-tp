@@ -25,3 +25,14 @@ def demo_mareados2
   jugar_partido(equipo_spurs_mareados, equipo_spurs)
 end
 
+def demo_bases_vs_spurs
+  jugar_partido(equipo_bases, equipo_spurs)
+end
+
+def demo_pivots_vs_spurs
+  jugar_partido(equipo_pivots, equipo_spurs)
+end
+
+def demo_bases_vs_pivots
+  jugar_partido(equipo_bases, equipo_pivots)
+end
